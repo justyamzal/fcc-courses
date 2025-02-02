@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    border: 2px dashed red;
+    width: 50%; /*100%*/
+    font-size: 3rem; /*1rem = 16px, 3rem = 48px*/
+    padding: 0.5em; /*1em = 48px, 0.5em = 24px*/
+
+}
+
+body {
+    /* width: 100vw; */
+    /*! the problem showup that when we declare 100vw or 100% for width at body it gives horizontal scroll ball, mouse the developer really hated it   */
+    
+    /* width: 100%; */
+
+    min-height: 100vh;
+}
+
+main {
+
+    /* width: 50vw;  */
+    /*! 50% of / viewport width*/
+    
+    /* background-color: lightblue; */
+
+    font-size: 2rem; /*! 1rem = 16px, 2 rem = 32px*/
+}
+
+    /*! rem : root (deciding font size as root)
+    em : parent (deciding font size as parent, it can be get from parent element, and which is can based on rem as well if the parent of element using rem) */
+
+p {
+    /*! because it based on parent element it gives 32px * 2em = 64px */
+    font-size: 1em; 
+    width: 40ch; /*! amount of letter that got picked*/
+}

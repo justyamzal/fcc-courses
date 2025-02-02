@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+    padding: 5%;
+    font-size: 2rem;
+    /* color: purple; */
+}
+
+input,button {
+    font:inherit;
+}
+
+.two p.satu {
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.two p.dua {
+    margin-top: 10px;
+    text-decoration: line-through;
+}
+.two p.tiga {
+    margin-top: 10px;
+    text-decoration: overline;
+}
+
+.two p.empat {
+    margin-top: 10px;
+    text-decoration: underline line-through;
+}
+
+.two p.lima {
+    margin-top: 10px;
+    text-decoration: underline overline;
+}
+.two p.enam {
+    margin-top: 10px;
+    text-decoration: line-through overline;
+}
+.two p.tujuh {
+    margin-top: 10px;
+    text-decoration: underline line-through overline;
+}
+.two p.delapan {
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+
+
+.tiga p.satu {
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+.tiga p.dua {
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+.tiga p.tiga {
+    margin-top: 10px;
+    text-transform: lowercase;
+}
+.tiga p.empat {
+    margin-top: 10px;
+    text-transform: none;
+}
+
+
+.empat p.satu {
+    margin-top: 20px;
+    text-indent: 2em; 
+    line-height: 1.5;
+}
+.empat p.dua {
+    margin-top: 10px;
+    letter-spacing: .5em;
+}
+.empat p.tiga {
+    margin-top: 10px;
+    word-spacing: 1em;
+}   
+
+
+.lima p.satu {
+    margin-top: 20px;
+    font-family: monospace;
+}
+.lima p.dua {
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+.lima p.tiga {
+    margin-top: 10px;
+    font-family: cursive;
+}
+.lima p.empat {
+    margin-top: 10px;
+    font-family: fantasy;
+}
+.lima p.enam {
+    font-family: "dancing script";
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  
+}

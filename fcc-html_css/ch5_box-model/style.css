@@ -1,0 +1,38 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* box-sizing: border-box; is a CSS property that tells the browser to account for any border and padding in the values you specify for an element's width and height.*/
+}
+
+
+.container {
+    border: 10px double red;
+    font-size: 1.5rem;
+    margin: /* 1.5rem */ 1em; /*! 1em = 1.5rem*/
+    padding: /* 1.5rem */ 1em; /*! 1em = 1.5rem*/
+    /* width: 400px; */
+    outline: 5px solid purple;
+    outline-offset: -20px ;
+    
+
+}
+
+
+h1 {
+    border: 2px dashed red;
+    width: 50%; /*100%*/
+    font-size: 3rem; /*1rem = 16px, 3rem = 48px*/
+    padding: 0.5em; /*1em = 48px, 0.5em = 24px*/
+}
+
+.circle {
+    margin: 3rem auto;
+    background-color: gold;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 50% /*50px*/ /*! it's just same*/ ;
+    outline: 2px solid red ;
+    outline-offset: 0.25rem;
+}

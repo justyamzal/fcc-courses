@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display CSS</title>
+    <style>
+        /* Gaya untuk elemen block */
+        .block {
+            display: block;
+            background-color: lightblue;
+            margin: 10px 0 50px;
+            padding: 10px;
+            border: 1px solid blue;
+            /* width: 1200px; */
+        }
+
+        /* Gaya untuk elemen inline */
+        .inline {
+            display: inline;
+            background-color: lightgreen;
+            margin: 100px 0 50px;
+            padding: 10px;
+            border: 1px solid green;
+            width: 1200px;
+            /*! unaffected / is not affected  */
+        }
+
+        /* Gaya untuk elemen inline-block */
+        .inline-block {
+            display: inline-block;
+            background-color: lightcoral;
+            margin: 50px 0 50px;
+            padding: 10px;
+            border: 1px solid red;
+            width: 200px;
+            height: 100px;
+        }
+
+        section {
+            margin: 100px 0 100px;
+            
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+
+        <h1>Contoh Display CSS</h1>
+
+        <div class="block">
+            This is Block element.
+        </div>
+        <h2 class="block">This is Block element.</h2>
+
+        <p class="block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, officiis.</p>
+
+        <ul class="block">
+            <li>The other < Tag> that classified as a block element is :</li>
+            <li>ul,ol,li</li>
+            <li>table</li>
+            <li>header</li>
+            <li>footer</li>
+            <li>section</li>
+            <li>article</li>
+            <li>nav</li>
+            <li>aside</li>
+            <li>main</li>
+            <li>form</li>
+            <li>blockquote - Kutipan blok</li>
+            <li>figure - Mengelompokkan elemen gambar atau diagram.</li>
+            <li>figcaption - Keterangan gambar.</li>
+        </ul>
+    </section>
+    <section>
+
+        <span class="inline">
+            This is Inline element
+        </span>
+        <span class="inline">
+            this is also Inline element, next to the previous inline element.
+        </span>
+        <span class="inline">
+            There are some < Tag> that classified as an inline element :a, span, strong, em, i,
+        </span>
+    </section>
+    <section>
+        <div class="inline-block">
+            Ini adalah elemen inline-block.
+        </div>
+        <div class="inline-block">
+            Ini juga elemen inline-block, di sebelah elemen inline-block sebelumnya.
+        </div>
+    </section>
+</body>
+
+</html>

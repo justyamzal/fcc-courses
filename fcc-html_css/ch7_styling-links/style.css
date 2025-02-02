@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+    padding: 10%;
+    font-size: 2rem;
+    font-family: 'danceing script';
+}
+
+p.satu a{
+    text-decoration: none;
+}
+p.dua a{
+    cursor: not-allowed;
+}
+p.tiga a{
+    color: red;
+}
+
+p.empat a{
+    color: purple;
+}
+
+p.empat a:hover, p.empat a:focus{
+    /* color: pink; */
+    color: hsl(207, 44%, 49%,0.8);
+    background:gold;
+}
+
+p.empat a:active{
+    color: orange;
+}
+
+p.empat a:visited{
+    color: green;
+
+}

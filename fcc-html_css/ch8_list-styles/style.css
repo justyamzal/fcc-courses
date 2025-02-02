@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+    padding: 5% 10%;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+h3 {
+    font-family: cursive;
+}
+
+ol.nol {
+    list-style-type: decimal; /*default style */
+    /* list-style-type:decimal-leading-zero; */
+    /* list-style-type: disc; */
+    /* list-style-type: upper-roman; */
+}
+
+ol.satu {
+    list-style: upper-roman;
+}
+ol.dua {
+    list-style-type: lower-alpha;
+}
+ol.tiga {
+    color: blueviolet;
+}
+
+
+ul.nol{
+    /* list-style-type: disc; default style */
+    list-style-type: circle;
+    /* list-style-type: square; */
+}
+
+ul.satu {
+    list-style-type: square;
+    list-style-position: outside; /*default style*/
+    text-align: center;
+}
+
+ul.dua {
+    list-style-type: square;
+    text-align: center;
+    list-style-position: inside;
+    /*list-style-position: outside;*/  /*default style*/
+}
+ul.tiga {
+    list-style-type: square;
+    text-align: center;
+    color: #00f;
+    list-style:url("checkmark.png");
+    list-style-position: inside;
+    
+}
+
+ul.empat li:nth-child(even) {
+    color: red;
+}
+
+ul.lima {
+    text-align: center;
+    list-style-position: inside;
+}
+
+ul.lima ::marker  {
+    color: blue;
+    font-family: fantasy;
+    font-size: 1.5 em;
+    content: "Only $5 >> ";
+    
+    
+}
