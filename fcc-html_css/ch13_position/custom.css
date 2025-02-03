@@ -1,5 +1,11 @@
+
+*, html {
+    scroll-behavior: smooth !important;
+}
+
 section {
-    height: 100vh;
+    height: 200vh;
+    
 }
 
 .blue {
