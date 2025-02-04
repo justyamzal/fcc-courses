@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+            background-color: lightgray;
+        }
+        .item {
+            background-color: teal;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            flex-basis: 200px;
+        }
+        .item1 {
+            flex-shrink: 1;
+        }
+        .item2 {
+            flex-shrink: 2;
+        }
+        .item3 {
+            flex-shrink: 3;
+        }
+    </style>
+    <title>Flex Shrink Example</title>
+</head>
+<body>
+    <p>3. flex-shrink: Properti ini menentukan seberapa banyak elemen fleksibel akan menyusut dibandingkan dengan elemen lain dalam kontainer fleksibel ketika ruang tersedia lebih sedikit dari yang dibutuhkan. Nilai defaultnya adalah 1, yang berarti elemen akan menyusut jika perlu. Jika Anda menetapkan flex-shrink: 0, elemen tersebut tidak akan menyusut. Contoh:</p>
+    <div class="container">
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+    </div>
+</body>
+</html>

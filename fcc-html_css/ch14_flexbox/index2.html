@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        .flex-container {
+            display: flex;
+            background-color: #dde7ea;
+        }
+
+        .flex-container2 {
+            display: flex;
+            background-color: #a3d3e2dd;
+            margin-top: 50px;
+        }
+
+        
+        .flex-container2>div {
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+
+        }
+
+
+        .flex-container>div {
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section id="flex-item">
+        <h1>Flex Items</h1>
+        <p>All direct children of a flex container becomes flex items:</p>
+
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </section>
+
+    <section id="order-property">
+        <h1>The order Property</h1>
+
+        <p>Use the order property to sort the flex items as you like:</p>
+
+        <div class="flex-container">
+            <div style="order: 3">1</div>
+            <div style="order: 2">2</div>
+            <div style="order: 4">3</div>
+            <div style="order: 1">4</div>
+        </div>
+    </section>
+
+    <section id="flex-grow">
+        <h1>The flex-grow Property</h1>
+
+        <p>Make the third flex item grow eight times faster than the other flex items:</p>
+
+        <div class="flex-container">
+            <div style="flex-grow: 1">1</div>
+            <div style="flex-grow: 1">2</div>
+            <div style="flex-grow: 8">3</div>
+            <div style="flex-grow: 1">4</div>
+        </div>
+    </section>
+
+    <section id="flex-shrink">
+        <h1>The flex-shrink Property</h1>
+
+        <p>Do not let the third flex item shrink as much as the other flex items:</p>
+
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div style="flex-shrink:0">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+
+        <div class="flex-container2">
+            <div>1</div>
+            <div>2</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+
+    </section>
+
+
+
+
+</body>
+
+</html>
