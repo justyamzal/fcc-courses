@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    min-height: 100vh;
+    margin: 10px;
+    gap: 15px;
+}
+
+.content1, .content2, .content3, .content4 {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 100%;
+    gap: 15px;
+}
+
+.content1>div, .content2>div, .content3>div, .content4>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 220px;
+    background-color: tomato;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: sans-serif;    
+}
+
+.item2 {
+    flex: 2 !important;
+}
+
+.content2 {
+    flex: 2 !important;
+}
+
+.item3 {
+    flex: 100% !important;
+}
+
+.content3 {
+    flex: 1 !important;
+}
+
+.item7 {
+    flex: 3 !important;
+}
+.item8 {
+    flex: 2 !important;
+}
+
+@media screen and (max-width:768px) {
+    .content3 {
+        flex: 100% !important;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .container {
+        margin: 20px;
+    }
+
+    .item1, .item2, .item4, .item5, .item7, .item8 {
+        flex: 100% !important;
+    }
+
+    .item3 ,.item2, .item7 {
+        min-height: 300px !important;
+    }
+}
