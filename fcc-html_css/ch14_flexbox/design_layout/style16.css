@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+
+.content, .container1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content1 {
+    flex: 3;
+    gap: 15px;
+}
+
+.content>div, .content1>div, .content2>div {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #20e88e 20%, #1cfff4 80%);
+    min-height: 250px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item1{
+    flex: 2;
+} 
+
+.item2{
+    flex: 3;
+} 
+
+.item3 {
+    flex: 1;
+}
+
+.item4 {
+    flex: 1%00;
+
+}
+
+.item5 {
+    flex: 100%;
+}
+
+
