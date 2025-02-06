@@ -10,3 +10,262 @@ body {
     min-height: 100vh;  
 }
 
+section {
+    width: 1000px;
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid #000;
+    
+}
+
+section>.container>div {
+    /* border: 1px solid white; */
+}
+
+#one .container {
+    display: grid;
+    grid-auto-flow: column;
+    /*default*/
+    /* grid-auto-flow: row; */ 
+    
+    /* gap: 1px; */    
+} 
+
+.box1 {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: .5rem;
+
+    border: 1px solid white;
+}
+
+
+.box2 {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: .5rem;
+    border: 1px solid white;
+}
+
+#two .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* grid-template-columns: 200px 100px 1fr; */
+    
+    /* gap: 1px; */
+}
+
+
+#two .container2 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* gap: 1px; */
+}
+
+#two .container3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+}
+
+
+#two .container4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+}
+
+
+.box3 {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: .5rem;
+    border: 1px solid white;
+}
+#three .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    grid-auto-rows: 200px;
+}
+
+#three .container2 {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    
+    /*! they will not getting smaller until minimun 150px / minimum limit */
+    grid-auto-rows: minmax(150px,auto);
+    
+    /* row-gap: 1em; */
+    /* column-gap: 1em; */
+    gap: .5em;
+}
+
+.box4 {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: .5rem;
+    border: 1px solid white;
+}
+#four .container {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    
+    /*! they will not getting smaller until minimun 150px / minimum limit */
+    grid-auto-rows: minmax(150px,auto);
+    
+    /* row-gap: 1em; */
+    /* column-gap: 1em; */
+    gap: .5em;
+}
+
+#four .container .box4:first-child {
+    background-color: #00f;
+    /* grid-column-start: 1; */
+    /* grid-column-end: 4; */
+    grid-column: 1/4;
+    /* grid-row-start: 1; */
+    /* grid-row-end: 3; */
+    grid-row: 1/3;
+
+}
+
+
+/* --- Container 2  --- */
+#four .container2 {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    
+    /*! they will not getting smaller until minimun 150px / minimum limit */
+    grid-auto-rows: minmax(150px,auto);
+    
+    /* row-gap: 1em; */
+    /* column-gap: 1em; */
+    gap: .5em;
+}
+
+#four .container2 .box4:first-child {
+    background-color: #00f;
+
+    /* grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3; */
+    grid-column: 1/4;
+    grid-row: 1/3;
+
+    display: grid;
+    /* align-items: center;
+    justify-content: center; */
+    
+    /*!! shorthand  of those combination of align and justify-contents  */
+    place-content: center center
+}
+#four .container2 .box4:nth-child(2) {
+    background-color: purple;
+    grid-column: 1/5;
+    grid-row: 3/4;
+}
+
+
+.box5 {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    padding: .5rem;
+    border: 1px solid white;
+}
+
+#five {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    /*! they will not getting smaller until minimun 150px / minimum limit */
+    grid-auto-rows: 75px auto 75px;
+    gap: .5em;
+    place-content: center center;
+    grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd"
+        "mn mn mn mn mn mn mn sb sb"
+        "ft ft ft ft ft ft ft ft ft" 
+    ;
+    ;
+}
+
+#five .el {
+    background-color: rebeccapurple;  
+    color: #fff;
+    display: grid;
+    place-content: center ;
+}
+
+#five .container .box5:first-child{
+    background-color: #00f;
+    grid-column: 1/4;
+    grid-row: 1/3;
+    display: grid;
+    /*!! shorthand  of those combination of align and justify-contents  */
+}
+
+#five .header {
+    grid-area: hd;
+}
+#five .sidebar {
+    grid-area: sb;
+}
+#five .footer {
+    grid-area: ft;
+}
+
+
+#five .container .box5:nth-child(2) {
+    background-color: purple;
+    grid-column: 1/5;
+    grid-row: 3/4;
+}
+
+
+/* Section six */
+section#six {
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+#six header {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+}
+
+#six main .banner {
+    background-color: pink;
+    color: white;
+    padding: 10px;
+}
+
+#six main .content .main-content {
+    background-color: coral;
+    color: white;
+    padding: 10px;
+}
+
+#six main aside {
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    
+}
+
+#six footer {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+}
+
+#six .container {
+    display: grid;
+}
