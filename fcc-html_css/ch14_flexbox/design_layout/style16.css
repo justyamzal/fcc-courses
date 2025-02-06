@@ -7,60 +7,97 @@
 }
 
 body {
-    align-items: center;
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-}
-
-.content, .container1 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.content1 {
-    flex: 3;
-    gap: 15px;
-}
-
-.content>div, .content1>div, .content2>div {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: sans-serif;
-    background: linear-gradient(to right, #20e88e 20%, #1cfff4 80%);
-    min-height: 250px;
-    border-radius: 5px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+}
+/* set size and flex to container all of item */
+.container {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    gap: 10px;
+
+}
+/* set flex to item A,B and other container */
+.content, .subcontainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 10px;
 }
 
-.item1{
+
+/* giving color */
+.content>div, .content1>div, .content2>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #20e88e 20%, #1cfff4 80%);
+    min-height: 220px;
+    border-radius: 4px;
+
+}
+/* A */
+.item1 {
     flex: 2;
-} 
-
-.item2{
+}
+/* B */
+.item2 {
     flex: 3;
-} 
-
+}
+/* C,D,E */
 .item3 {
     flex: 1;
 }
-
-.item4 {
-    flex: 1%00;
-
-}
-
-.item5 {
+/* F, G */
+.item4, .item5 {
     flex: 100%;
+
+}
+
+.content1 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 3;
+    gap: 10px;
+}
+
+.content2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
 }
 
 
+@media screen and (max-width:768px) {
+    .content1{
+        flex:100%;
+    }
+
+    .item5{
+        min-height: 300px !important;       
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .item1, .item3 {
+        flex: 100%;
+    }
+    .item2, .item4 {
+        min-width: 300px;
+    }
+}
+
+
+
+/* background: linear-gradient(to right, #20e88e 20%, #1cfff4 80%); */
