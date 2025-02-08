@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID CSS | Repeat,Min-Max Content,Minmax Content,Auto-fill & Auto-fit</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ddd;
+        }
+
+        /* Repeat () */
+        .container {
+            margin: 10px;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+        }
+
+        .item {
+            background-color: salmon;
+        }
+
+        .item:nth-child(even) {
+            background-color: lightblue;
+        }
+
+        .container2 {
+            margin: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) repeat(5, 1.5fr);
+        }
+
+
+        /* Min-content  */
+        .container3 {
+            margin: 10px;
+            display: grid;
+            grid-template-columns: 1fr min-content 1fr;
+        }
+
+        .container4 {
+            margin: 10px;
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+        }
+
+        /* Auto-fit */
+        .container5 {
+            margin: 50px auto;
+            display: grid;
+            width: 60%;
+            grid-template-columns: repeat(auto-fit, 100px);
+            border: 5px solid orange;
+        }
+
+        /* Auto-fill */
+        .container6 {
+            margin: 50px auto;
+            display: grid;
+            width: 60%;
+            grid-template-columns: repeat(auto-fill, 100px);
+            border: 5px solid orange;
+        }
+
+        .container7 {
+            display: grid;
+            gap: 10px;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #333;
+            resize: horizontal;
+            /* Bisa di-resize untuk melihat efek responsif */
+            overflow: auto;
+        }
+
+        /* AUTO-FILL */
+        .auto-fill {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        .item7 {
+            background: lightcoral;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial;
+        }
+
+
+        .container8 {
+            display: grid;
+            gap: 10px;
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #333;
+            resize: horizontal;
+            /* Bisa di-resize untuk melihat efek responsif */
+            overflow: auto;
+        }
+
+        /* AUTO-FIT */
+        .auto-fit {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .item8 {
+            background: lightseagreen;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Repeat()</h1>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <div class="container2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <h1>Min-Content</h1>
+    <p style="margin: 10px;">setiap tulisan akan dipecah lalu akan dipilih potongan kata paling panjang sebagai batas
+        maximal dari content tsb.</p>
+    <div class="container3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5 Lorem ipsum dolor sit amet consec adipisicing. elit. Nesciu, hic.</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <h1>Max-Content</h1>
+    <p style="margin: 10px;">berbanding terbalik dgn min-content, tulisan pad max-content tidak akan dipotong melainkan
+        diteruskan sepanjang tulisan tsb hingga akhir.</p>
+    <div class="container4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5 Lorem ipsum dolor sit amet consec adipisicing. elit. Nesciu, hic.</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <h1>Auto-fit</h1>
+    <p style="margin: 10px;"></p>
+    <div class="container5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <!-- <div class="item">4</div>
+        <div class="item">5 </div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+    </div>
+
+    <h1>Auto-fill</h1>
+    <p style="margin: 10px;">auto fill akan mengecek jika masih ada tempat yg tersisa pada container atau tidak supaya
+        dapat diisi oleh kolom dengan size yg disesuaikan berbeda dengan auto fit.</p>
+    <div class="container6">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <!-- <div class="item">4</div>
+        <div class="item">5 </div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div> -->
+    </div>
+
+    <!-- Auto-fit -->
+    <!-- 
+    Perilaku:
+    - Saat kontainer diperlebar, track kosong dihilangkan, dan item yang ada melebar mengisi ruang.
+    - Lebar item akan selalu sama rata (1fr) selama memenuhi minimal 150px.
+    -->
+    <h1>Auto-fit with minmax</h1>
+    <div class="container8 auto-fit">
+        <div class="item8">Item 1</div>
+        <div class="item8">Item 2</div>
+        <div class="item8">Item 3</div>
+    </div>
+
+    <!-- Auto-fill -->
+    <!-- 
+        Perilaku: 
+        - Saat kontainer diperlebar, akan muncul track/kolom kosong (warna latar belakang kontainer terlihat di kolom kosong).
+        - Track kosong tetap memiliki lebar minimal 150px jika ada ruang.
+    -->
+    <h1>Auto-fill with minmax</h1>
+    <div class="container7 auto-fill">
+        <div class="item7">Item 1</div>
+        <div class="item7">Item 2</div>
+        <div class="item7">Item 3</div>
+    </div>
+
+
+</body>
+
+</html>
