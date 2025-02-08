@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID CSS | GRID Auto/Template Columns/Rows </title>
+
+    <style>
+        .container {
+            display: grid;
+            /* Grid eksplisit: 2 kolom dan 2 baris */
+            grid-template-columns: 100px 200px;/*panjang cell kolom*/
+            grid-template-rows: 50px 100px; /*lebar cell baris*/
+
+             /* Grid implisit: baris tambahan akan berukuran 30px */
+            grid-auto-rows: 30px;
+            gap: 10px;
+        }
+
+        .item {
+            background: lightblue;
+            padding: 10px;
+        }
+
+        .container2 {
+            display: grid;
+            /* Grid eksplisit: 1 kolom dan 2 baris */
+            grid-template-columns: 100px;
+            grid-template-rows: 50px 100px;
+            grid-auto-flow: column;
+            grid-auto-columns: 200px;
+            gap: 10px;
+        }
+        .item2 {
+            background:lightgreen;
+            padding: 10px;
+        }
+
+        .container3 {
+            display: grid;
+            grid-template-columns: 50px 100px;
+            grid-template-rows: 100px 50px;
+            grid-auto-flow: column;
+            
+        }
+
+        .item3{
+            background: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .item3:nth-child(even) {
+            background: lightblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Contoh 1: Grid dengan Baris Implisit</h2>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+    <p>Hasil :
+        <ul>
+            <li>Kolom 1: 100px, Kolom 2: 200px.</li>
+            <li>Baris 1: 50px, Baris 2: 100px.</li>
+            <li>Item 5 akan masuk ke baris implisit ke-3 dengan tinggi 30px.</li>
+        </ul>
+    </p>
+
+    <h2>Contoh Grid dengan Kolom Implisit</h2>
+    <div class="container2">
+        <div class="item2">1</div>
+        <div class="item2">2</div>
+        <div class="item2">3</div>
+        <div class="item2">4</div>
+        <div class="item2">5</div>
+    </div>
+    <p>Hasil
+        <ul>
+            <li>Baris 1: 50px, Baris 2: 100px.</li>
+            <li>Kolom 1: 100px (eksplisit), Kolom 2: 200px (implisit).</li>
+            <li> Item 5 akan masuk ke kolom implisit ke-2 dengan lebar 200px.</li>
+          </ul>
+    </p>
+
+    
+    <h2>Contoh Grid dengan Kolom Implisit</h2>
+    <div class="container3">
+        <div class="item3">1</div>
+        <div class="item3">2</div>
+        <div class="item3">3</div>
+        <div class="item3">4</div>
+        <div class="item3">5</div>
+        <div class="item3">6</div>
+        <div class="item3">7</div>
+        <div class="item3">8</div>
+        <div class="item3">9</div>
+    </div>
+
+
+</body>
+
+</html>
