@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap');
+
+/* RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,button,textarea {
+    font: inherit;
+}
+
+/* VARIABLES */
+:root {
+    /* Fonts */
+    --FF: "Nunito", sans-serif;
+
+}
+
+
+/* GENERAL STYLES */
+html {
+    font-size: 22px;
+}
+
+body {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 1rem;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+
+}
+
+th,td,caption {
+    border: 1px solid #333;
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: separate;
+    padding: .5rem;
+}
