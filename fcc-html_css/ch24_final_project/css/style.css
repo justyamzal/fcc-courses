@@ -23,8 +23,58 @@ input,button,textarea {
 :root {
     /* Fonts */
     --FF: "Nunito", sans-serif;
+    --FF-HEADINGS: "Fugaz One",cursive;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+    /* Colors */
+    --BGCOLOR-FADE : rgb (252, 220, 160);
+    --BGCOLOR: orange;
+    --BODY-BGCOLOR: #FFF;
+    --BORDER-COLOR: #333;
+    --BUTTON-COLOR: #FFF;
+    --FONT-COLOR: #000;
+    --HEADER-BGCOLOR: #000;
+    --HEADER-COLOR: #FFF;
+    --HERO-BGCOLOR: rgba(51, 178, 51, 0.75);
+    --HERO-COLOR: #FFF;
+    --HIGHLIGHT-COLOR: rgb(51, 178, 51);
+    --LINK-ACTIVE: orange;
+    --LINK-COLOR: #000;
+    --LINK-HOVER: hsla(0, 0%, 0%, 0.6);
+    --NAV-BGCOLOR: #FFF;
+
+    /* BORDERS */
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
+
+    /* STANDARD PADDING */
+    --PADDING-TB: 0.25em;
+    --PADDING-SIDE: 2.5%;
+
+    /* STANDARD MARGIN */
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+    
 
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --BGCOLOR-FADE: gray;
+        --BGCOLOR: #000;
+        --BODY-BGCOLOR: #333;
+        --BORDER-COLOR: whitesmoke;
+        --BUTTON-COLOR: #000;
+        --FONT-COLOR: whitesmoke;
+        --HEADER-COLOR: whitesmoke;
+        --HERO-COLOR: #333;
+        --HIGHLIGHT-COLOR: whitesmoke;
+        --LINK-ACTIVE: rgb(252, 200, 103);
+        --LINK-COLOR: whitesmoke;
+        --LINK-HOVER: orange;
+        --NAV-BGCOLOR: rgb(20, 20, 20);
+    }
+}
+
 
 
 /* GENERAL STYLES */
