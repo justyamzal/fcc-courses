@@ -240,7 +240,8 @@ a:focus-visible {
 
 
 .footer {
-    position: sticky;
+    /* position: sticky; */
+    position: static;
     bottom: 0;
     background-color: var(--HEADER-BGCOLOR);
     color: var(--HEADER-COLOR);
