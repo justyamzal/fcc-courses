@@ -13,7 +13,8 @@ img {
     display: block;
     width: 100%;
     max-width: 1200px;
-    height: auto;
+    /* height: auto; */
+    height: 500px;
     object-fit: cover;
 }
 
@@ -96,6 +97,10 @@ textarea {
     white-space: nowrap;
 }
 
+.wrap {
+    white-space: normal;
+}
+
 .center {
     text-align: center;
 }
@@ -168,13 +173,13 @@ a:focus-visible {
 }
 
 .header__h1 {
-    
+
     text-align: center;
     background-color: var(--HEADER-BGCOLOR);
     color: var(--HEADER-COLOR);
     /* padding: var(--PADDING-TB) var(--PADDING-SIDE); */
     padding: .6em 2.5%;
-    
+
 }
 
 .header__nav {
@@ -379,9 +384,35 @@ tfoot td {
 }
 
 
+/* Hamburger Menu */
+.header__hamburger {
+    display: none;
+    /* Hidden by default */
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: .6em;
+    right: 1em;
+    z-index: 2;
+    /* Ensure it is above other elements */
+}
 
-/* Responsive Display */
+.header__hamburger--close {
+    display: none;
+    /* Hidden by default */
+    font-size: 2.6rem;
+    cursor: pointer;
+    position: absolute;
+    top: .59em;
+    right: .85em;
+    z-index: 2;
+    /* Ensure it is above other elements */
+}
+
+/*--- RESPONSIVE DISPLAY ---*/
 @media screen and (max-width: 768px) {
+
+    /*! Bienvenidos! caption */
     .hero__h2 {
         position: relative;
         top: auto;
@@ -389,27 +420,107 @@ tfoot td {
         text-align: center;
         animation: none;
     }
+
 }
 
-@media screen and (min-width:576px) {
+@media screen and (max-width:678px) {
+    .header__h1 {
+        font-size: 1.9em;
+    }
+
+    /*- General -*/
+    .header__nav {
+        display: flex;
+        /* Show the nav */
+        position: fixed;
+        /* Fixed position */
+        top: 0;
+        right: -100%;
+        /* Start off-screen to the right */
+        background-color: var(--NAV-BGCOLOR);
+        width: 50%;
+        height: 100vh;
+        /* Full height */
+        z-index: 1;
+        /* Ensure it is above other elements */
+        flex-direction: column;
+        /* Stack items vertically */
+        justify-content: center;
+        /* Center items */
+        align-items: center;
+        /* Center items */
+        transition: right 0.3s ease-in-out;
+        /* Smooth slide animation */
+    }
+
+    .header__h1 {
+        padding: .6em 11%;
+    }
+
+    .header__ul {
+        flex-direction: column;
+        /* Stack items vertically */
+        gap: 2rem;
+        /* Space between items */
+    }
+
+    .header__hamburger {
+        display: block;
+        /* Show hamburger icon */
+    }
+
+    .header__hamburger--close {
+        display: block;
+        /* Show close button */
+    }
+
+    /* Class to slide the menu in */
+    .header__nav.active {
+        right: 0;
+        /* Slide in from the right */
+    }
+
+    .header__nav.active .header__hamburger {
+        display: none;
+        /* Hide hamburger when menu is active */
+
+    }
+}
+
+@media screen and (max-width:576px) {}
+
+
+/*! Originally */
+@media screen and (min-width:678px) {
     .header__h1::before {
-        content: "🌮"
+        content: "🌮";
+        white-space: nowrap;
     }
 
     .header__h1::after {
-        content: ' 🌮'
+        content: '🌮';
+        white-space: nowrap;
     }
 
     .menu__header,
     .menu__cr,
     .menu__sf,
     .menu__cs {
-        font-size: 125%;
+        font-size: 120%;
     }
+
+    /* .header__h1 {
+        font-size: 1.9em;
+    } */
 
 }
 
 @media screen and (max-width: 480px) {
+    .header__h1 {
+        padding: .6em 12%;
+    }
+
+    /*! Contact Page  */
 
     .contact__input,
     .contact__textarea {
@@ -421,4 +532,5 @@ tfoot td {
         width: 100%;
         margin-bottom: 0.5rem;
     }
+
 }
