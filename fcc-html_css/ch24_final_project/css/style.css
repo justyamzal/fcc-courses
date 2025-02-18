@@ -190,7 +190,7 @@ a:focus-visible {
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
-    /* text-decoration: none; */
+
 }
 
 .header__ul li a {
