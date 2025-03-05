@@ -1,0 +1,12 @@
+[
+  {
+    "judul": "Advanced Javascript",
+    "penulis": "John Doe",
+    "harga": 200000
+  },
+  {
+    "judul": "DOM Javascript",
+    "penulis": "Jane Smith",
+    "harga": 300000
+  }
+]
