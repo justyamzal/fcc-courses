@@ -1,6 +1,5 @@
-
-const fs = require("fs");
-const readline = require("readline");
+const fs = require("fs");   //fs: Modul Node.js untuk operasi file system (membaca/menulis file)
+const readline = require("readline");   //readline: Modul Node.js untuk menerima input dari terminal
 
 // Membuat interface untuk input di terminal
 const rl = readline.createInterface({
@@ -18,20 +17,20 @@ function bacaData() {
     }
 }
 
-// 🔹 Fungsi untuk menyimpan data ke file JSON
+// 🔹 Fungsi untuk menyimpan data ke file JSON format JSON rapi
 function simpanData(data) {
     fs.writeFileSync("buku.json", JSON.stringify(data, null, 2));
 }
 
 const tokoBuku = {
-    buku: bacaData(), // Memuat data dari file saat program dijalankan
+    buku: bacaData(), // Memuat data dari file saat program dijalankan , Inisialisasi data buku dari file saat program mulai
 
     //* CREATE: Tambah buku baru
     tambahBuku(judul, penulis, harga) {
-        const bukuBaru = { judul, penulis, harga };
-        this.buku.push(bukuBaru);
-        simpanData(this.buku);
-        console.log(`✅ Buku "${judul}" berhasil ditambahkan!\n`);
+        const bukuBaru = { judul, penulis, harga }; //Buat objek buku baru
+        this.buku.push(bukuBaru);   //Tambahkan ke array buku
+        simpanData(this.buku);      //Simpan ke file
+        console.log(`✅ Buku "${judul}" berhasil ditambahkan!\n`); 
     },
 
     //* READ: Menampilkan semua buku

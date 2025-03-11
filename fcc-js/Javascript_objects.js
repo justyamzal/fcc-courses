@@ -20,7 +20,7 @@
 // ! the purposes of javascript object is to store state and behaviour. state is represented by properties and behaviour is represented by functions within the object. when we specify a function within an object, we call it method
 
 
-  // ----- FACTIORY FUNCTIONS -----/
+  // ----- FACTIORY FUNCTIONS ----- //
   // ! factory functions provide an efficient way for us to create a new object. now the name of the function will use camel case notation and it can accept parameter variables. these parameter variables can help customize the values of the object being returned. the benefit is that, it reduce code duplication and then need to copy and paste
   
   /*
@@ -59,7 +59,7 @@
   const anotherDog = getDog('Marley', 'Chocolate Lab', 3, 60);
   // console.log(anotherDog);
 
-// ----- CONSTRUCTIR FUNCTION ----- //
+// ----- CONSTRUCTOR FUNCTIONS ----- //
 //* 
 
 function Dog (name, breed, age, weightInPounds) {
