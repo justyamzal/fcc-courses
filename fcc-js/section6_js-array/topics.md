@@ -5,8 +5,6 @@
 (2:23:40) Arrow Functions
 (2:26:16) Removing Elements
 (2:29:06) Emptying an Array
-
-
 (2:31:25) Combining and Slicing Arrays
 (2:33:15) Spread Operator
 (2:34:48) Iterating an Array
