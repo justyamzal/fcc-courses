@@ -52,7 +52,9 @@ let colors = new Array("Red", "Green", "Blue");
 
 
 
-// ----- ADDING ELEMENTS (MANIPULATION ELEMENT) -----//
+//---------- (MANIPULATION ELEMENT) ----------//
+
+//----- ADDING ELEMENTS, 
 /*
 📌 Adding Elements to an Array dalam JavaScript
 🔍 Apa Itu Adding Elements to an Array?
@@ -84,7 +86,9 @@ let languages = ["javascript", "Python", "C++", "PHP"];
 // console.log(languages.length);  // Output: 4
 
 /*
-* --- 📌 Operasi Array (Methods) ---
+* --- 📌 OPERASI ARRAY (Methods) ---
+--------------------------------------
+
 *1️⃣ Menambahkan dan Menghapus Elemen
 ---------------------------------------------------------------------------------------
 Method	    Deskripsi	                                    Contoh
@@ -102,10 +106,13 @@ let _fruits = ["Apple", "Banana"];
 
 //! Menambahkan elemen di akhir	 
 _fruits.push("Cherry","Durian"); //[ 'Apple', 'Banana', 'Cherry', 'Durian']
+
 //! Menghapus elemen terakhir
 _fruits.pop(); //[ 'Apple', 'Banana', 'Cherry']
+
 //! Menambahkan elemen di awal	
 _fruits.unshift("Avocado"); //[ 'Avocado', 'Apple', 'Banana', 'Cherry']
+
 //! Menghapus elemen pertama
 _fruits.shift(); //[ 'Apple', 'Banana', 'Cherry']
 
@@ -116,7 +123,7 @@ _fruits.shift(); //[ 'Apple', 'Banana', 'Cherry']
 ➡ Menggunakan .unshift() dan .shift() untuk bekerja dengan elemen di awal array.*/
 
 /*
-* 2️⃣ Menggabungkan dan Memotong Array 
+* 2️⃣ Menggabungkan dan Memotong Array (Concat, Slice)
 
 ----------------------------------------------------------
 Method	    Deskripsi	        Contoh
@@ -156,7 +163,9 @@ values.splice(2, 1, 25, 26); //! Menghapus 1 elemen dari indeks 2 dan menambahka
 // ➡ Menghapus angka 30 di indeks 2 lalu menggantinya dengan 25, 26.
 
 /*
-* --- 📌 Looping dalam Array ---
+* --- 📌 Looping dalam Array (For Loop, For Each) ---
+---------------------------------------------------------
+
 * 1️⃣ Menggunakan for Loop
 */
 
@@ -200,7 +209,8 @@ let matrix = [
 
 
 /*
-* ---📌 Menambahkan Elemen dengan Operator Spread (...) ----
+* --- 📌 Menambahkan Elemen dengan Operator Spread (...) ----
+---------------------------------------------------------------
 Selain metode di atas, kita juga bisa menggunakan spread operator (...) untuk menambahkan elemen baru.
 
 * 1️⃣ Menambahkan Elemen di Akhir
@@ -261,7 +271,163 @@ chatMessages.unshift("Hey!");  // Pesan terbaru ada di awal
 ✅ Pahami kapan harus menggunakan metode yang sesuai untuk meningkatkan efisiensi program.
 */
 
-//  ----- Finding Elements (Primitives) - JavaScript ----- //
+// ----- REMOVING ELEMENTS ----- //
+
+//n: lebih lengkap bisa kembali ke sisi atas, ADDING ELEMENTS (MANIPULATION ELEMENT)
+
+/*
+* Metode untuk menghapus elemen dari array:
+
+- Akhir (pop())
+- Awal (shift())
+- Tengah (splice())
+🔹 Contoh Implementasi :
+*/
+const Fruits = ["Avocado", "Banana","Cherry","Durian","Eggplant"];
+
+//! Menghapus elemen terakhir
+Fruits.pop();
+// console.log(Fruits); //! Output: [ 'Avocado', 'Banana', 'Cherry', 'Durian' ]
+
+//! Menghapus elemen pertama
+Fruits.shift();
+// console.log(Fruits); //!  Output: [ 'Banana', 'Cherry', 'Durian' ]
+
+//! Menghapus elemen di tengah (index 1)
+Fruits.splice(1,1);
+// console.log(Fruits); //!  Output: [ 'Banana', 'Durian' ]
+
+// -----  EMPTYING AN ARRAY -----//
+
+/*
+* Contoh Implementasi
+*/
+let numbers = [10, 20, 30, 40];
+
+//! Cara 1: Mengosongkan dengan panjang 0
+numbers.length = 0;
+// console.log(numbers);
+
+//! Cara 2: Menggunakan splice()
+let numbers_ = [10, 20, 30, 40];
+numbers_.splice(0, numbers_.length);
+// console.log(numbers_);
+
+// ----- COMBINING AND SLICING ARRAYS ----- //
+
+/* Kita bisa menggabungkan (concat()) dan memotong (slice()) array. */
+
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+// Menggabungkan array
+const combined_ = array1.concat(array2);
+// console.log(combined_); // [ 1, 2, 3, 4, 5, 6 ]
+
+// Memotong array
+const sliced_ = combined_.slice(2, 4);
+// console.log(sliced_);
+
+/*
+*🔍 Bagaimana slice(2, 4) menghasilkan [3, 4]?
+Fungsi slice(start, end) bekerja sebagai berikut:
+
+! start (2) → Index awal dari elemen yang akan diambil.
+! end (4) → Index akhir (tidak termasuk) elemen yang akan diambil.
+! Array combined setelah concat() adalah:
+
+Index:  0   1   2   3   4   5
+--------------------------------
+Array: [1,  2,  3,  4,  5,  6]
+
+➡️ slice(2, 4) mengambil elemen dari index ke-2 hingga sebelum index ke-4:
+
+Index 2 → 3 ✅
+Index 3 → 4 ✅
+Index 4 → 5 (Tidak diambil) ❌
+🔹 Outputnya:
+console.log(sliced); // [3, 4]
+
+⚡ Kesimpulan:
+Metode slice(start, end) mengambil elemen dari index start hingga sebelum end, tetapi tidak termasuk elemen pada index end
+*/
+
+
+// -----  SPREAD OPERATOR (...) ----- //
+/* Alternatif untuk .concat() */
+const _combined = [ ...array1, ...array2 ];
+// console.log(_combined);
+
+// -----  ITERATING AN ARRAY ----- //
+
+/*🔹 Contoh Implementasi */
+const bilangan = [1,2,3];
+
+/* Menggunakan forEach */
+// bilangan.forEach(bil => console.log(bil));
+
+
+// -----  JOINING ARRAYS ----- //
+
+/*
+Mengubah array menjadi string.
+🔹 Contoh Implementasi
+*/
+const words = ["Hello", "World"];
+// console.log(words.join(" ")); //Hello World
+
+
+// -----  SORTING ARRAYS ----- //
+/* 🔹 Contoh Implementasi */
+
+const bilangan_ = [40,10,30,20];
+bilangan.sort((a,b) => a - b);
+// console.log(bilangan_);
+
+
+// -----  TESTING THE ELEMENTS OF AN ARRAY ----- //
+/*
+every() → Semua elemen harus memenuhi kondisi.
+some() → Setidaknya satu elemen memenuhi kondisi.
+*/
+
+const _bilangan = [10, 20, 30];
+// console.log(_bilangan.every(bil => bil > 5)); // true
+// console.log(_bilangan.some(bil => bil > 25)); // true
+
+
+// -----  FILTERING AN ARRAY ----- //
+
+/* 🔹 Contoh Implementasi */
+const _bilangan_ = [10, 15, 20, 25];
+const filtered = _bilangan_.filter(bil => bil > 15);
+// console.log(filtered);  // [20, 25]
+
+
+
+// -----  MAPPING AN ARRAY ----- //
+/*
+* Mengubah setiap elemen dalam array.
+🔹 Contoh Implementasi :
+*/
+
+const theNumbers = [1,2,3];
+const doubled = theNumbers.map(num => num * 2);
+// console.log(doubled); //[ 2, 4, 6 ]
+
+
+
+// -----  REDUCING AN ARRAY ----- //
+/* 
+* Menghitung total nilai dalam array. 
+*/
+const theNumbers_ = [1, 2, 3, 4];
+const sum = theNumbers_.reduce((acc, curr) => acc + curr, 0); //! acc = Accumulator ( Menyimpan hasil akumulasi dari operasi sebelumnya),  curr = Current value ( Menyimpan hasil akumulasi dari operasi sebelumnya)
+// console.log(sum);
+
+
+
+//----- Finding Elements (Primitives) - JavaScript -----//
  
 /*
 🔍 Apa Itu Finding Elements (Primitives)?
@@ -390,7 +556,6 @@ let students_ =["Alice","Bob","Charlie","David","Elias"];
 
 let position = students_.indexOf("Charlie");
 // console.log(`Charlie is on position ${position + 1 } of the list`);
-
 
 
 /*
@@ -601,7 +766,7 @@ Gunakan some() jika hanya ingin tahu apakah ada elemen yang cocok.
 Gunakan filter() jika ingin mendapatkan semua objek yang cocok.
 */
 
-// ----- Arrow Functions ----- //
+// ----- ARROW FUNCTIONS ----- //
 
 /*
 📌 Arrow Functions dalam JavaScript
@@ -787,172 +952,6 @@ n: --- 📌 Kesimpulan ---
 ! ✅ Hati-hati saat menggunakan arrow function dalam objek (this tidak merujuk ke objeknya sendiri).
 */
 
-// ----- REMOVING ELEMENTS ----- //
-
-//n: lebih lengkap bisa kembali ke sisi atas, ADDING ELEMENTS (MANIPULATION ELEMENT)
-
-/*
-* Metode untuk menghapus elemen dari array:
-
-- Akhir (pop())
-- Awal (shift())
-- Tengah (splice())
-🔹 Contoh Implementasi :
-*/
-const Fruits = ["Avocado", "Banana","Cherry","Durian","Eggplant"];
-
-//! Menghapus elemen terakhir
-Fruits.pop();
-// console.log(Fruits); //! Output: [ 'Avocado', 'Banana', 'Cherry', 'Durian' ]
-
-//! Menghapus elemen pertama
-Fruits.shift();
-// console.log(Fruits); //!  Output: [ 'Banana', 'Cherry', 'Durian' ]
-
-//! Menghapus elemen di tengah (index 1)
-Fruits.splice(1,1);
-// console.log(Fruits); //!  Output: [ 'Banana', 'Durian' ]
-
-// -----  EMPTYING AN ARRAY -----//
-
-/*
-* Contoh Implementasi
-*/
-let numbers = [10, 20, 30, 40];
-
-//! Cara 1: Mengosongkan dengan panjang 0
-numbers.length = 0;
-// console.log(numbers);
-
-//! Cara 2: Menggunakan splice()
-let numbers_ = [10, 20, 30, 40];
-numbers_.splice(0, numbers_.length);
-// console.log(numbers_);
-
-// ----- COMBINING AND SLICING ARRAYS ----- //
-
-/* Kita bisa menggabungkan (concat()) dan memotong (slice()) array. */
-
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
-
-// Menggabungkan array
-const combined_ = array1.concat(array2);
-// console.log(combined_); // [ 1, 2, 3, 4, 5, 6 ]
-
-// Memotong array
-const sliced_ = combined_.slice(2, 4);
-// console.log(sliced_);
-
-/*
-*🔍 Bagaimana slice(2, 4) menghasilkan [3, 4]?
-Fungsi slice(start, end) bekerja sebagai berikut:
-
-! start (2) → Index awal dari elemen yang akan diambil.
-! end (4) → Index akhir (tidak termasuk) elemen yang akan diambil.
-! Array combined setelah concat() adalah:
-
-Index:  0   1   2   3   4   5
---------------------------------
-Array: [1,  2,  3,  4,  5,  6]
-
-➡️ slice(2, 4) mengambil elemen dari index ke-2 hingga sebelum index ke-4:
-
-Index 2 → 3 ✅
-Index 3 → 4 ✅
-Index 4 → 5 (Tidak diambil) ❌
-🔹 Outputnya:
-console.log(sliced); // [3, 4]
-
-⚡ Kesimpulan:
-Metode slice(start, end) mengambil elemen dari index start hingga sebelum end, tetapi tidak termasuk elemen pada index end
-*/
-
-
-// -----  SPREAD OPERATOR (...) ----- //
-/* Alternatif untuk .concat() */
-const _combined = [ ...array1, ...array2 ];
-// console.log(_combined);
-
-// -----  ITERATING AN ARRAY ----- //
-
-/*🔹 Contoh Implementasi */
-const bilangan = [1,2,3];
-
-/* Menggunakan forEach */
-// bilangan.forEach(bil => console.log(bil));
-
-
-// -----  JOINING ARRAYS ----- //
-
-/*
-Mengubah array menjadi string.
-🔹 Contoh Implementasi
-*/
-const words = ["Hello", "World"];
-// console.log(words.join(" ")); //Hello World
-
-
-// -----  SORTING ARRAYS ----- //
-/* 🔹 Contoh Implementasi */
-
-const bilangan_ = [40,10,30,20];
-bilangan.sort((a,b) => a - b);
-// console.log(bilangan_);
-
-
-// -----  TESTING THE ELEMENTS OF AN ARRAY ----- //
-/*
-every() → Semua elemen harus memenuhi kondisi.
-some() → Setidaknya satu elemen memenuhi kondisi.
-*/
-
-const _bilangan = [10, 20, 30];
-// console.log(_bilangan.every(bil => bil > 5)); // true
-// console.log(_bilangan.some(bil => bil > 25)); // true
-
-
-// -----  FILTERING AN ARRAY ----- //
-
-/* 🔹 Contoh Implementasi */
-const _bilangan_ = [10, 15, 20, 25];
-const filtered = _bilangan_.filter(bil => bil > 15);
-// console.log(filtered);  // [20, 25]
-
-
-
-// -----  MAPPING AN ARRAY ----- //
-/*
-Mengubah setiap elemen dalam array.
-🔹 Contoh Implementasi
-*/
-
-const theNumbers = [1,2,3];
-const doubled = theNumbers.map(num => num * 2);
-// console.log(doubled); //[ 2, 4, 6 ]
-
-
-
-// -----  REDUCING AN ARRAY ----- //
-/* Menghitung total nilai dalam array. */
-const theNumbers_ = [1, 2, 3, 4];
-const sum = theNumbers_.reduce((acc, curr) => acc + curr, 0); // acc = Accumulator ( Menyimpan hasil akumulasi dari operasi sebelumnya),  curr = Current value ( Menyimpan hasil akumulasi dari operasi sebelumnya)
-console.log(sum);
-
-
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
 
 
 
