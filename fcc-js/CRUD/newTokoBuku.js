@@ -61,7 +61,7 @@ const tokoBuku = {
 
 cariBukuAdvanced() {
     console.log("\n=== 🔍 PENCARIAN LANJUTAN ===");
-    console.log("1. Cari berdasarkan kata kunci (judul/penulis");
+    console.log("1. Cari berdasarkan kata kunci (judul/penulis)");
     console.log("2. Cari berdasarkan rentang harga\n");
 
     rl.question("Pilih metode pencarian (1-2): ", (metode) => {
