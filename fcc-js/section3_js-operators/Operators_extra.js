@@ -1,8 +1,8 @@
 //* ----------  1️⃣ Equality Operators (Strict vs. Loose Equality) ---------- 
 
 /* Equality operators digunakan untuk membandingkan dua nilai. Ada dua jenis utama:
-- Loose Equality (==) → Hanya membandingkan nilai tanpa memeriksa tipe data.
-- Strict Equality (===) → Membandingkan nilai dan tipe data.
+! - Loose Equality (==) → Hanya membandingkan nilai tanpa memeriksa tipe data.
+! - Strict Equality (===) → Membandingkan nilai dan tipe data.
 
 🔹 Contoh Perbedaan == dan ===
 */
