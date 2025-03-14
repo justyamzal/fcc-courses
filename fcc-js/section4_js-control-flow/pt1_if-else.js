@@ -26,9 +26,9 @@ if (hour >= 6 && hour <= 12) {
 //! This called code block, makes code more readable and looks clean
 let restaurantTime = 15;
 
-if (restaurantTime >= 6.00 && restaurantTime <= 12.00 )
+// if (restaurantTime >= 6.00 && restaurantTime <= 12.00 )
     // console.log('Serving Breakfast');
-else if (restaurantTime > 12.00 && restaurantTime <= 14.00)
+// else if (restaurantTime > 12.00 && restaurantTime <= 14.00)
     // console.log('Serving lunch');
-else 
+// else 
     // console.log('Serving Dinner');
