@@ -54,7 +54,7 @@ const tokoBuku = {
         });
 
         simpanData(this.buku);
-        console.log(`✅ Buku "${judul}" berhasil ditambahkan!\n!`);
+        console.log(`✅ Buku "${judul}" berhasil ditambahkan!\n`);
         kembaliKeMenu();
     },
 
@@ -84,27 +84,37 @@ const tokoBuku = {
         console.log('2. Cari berdasarkan tahun');
         console.log('3. Cari rentang harga\n');
 
-        rl.question("Masukkan kata kunci: ", (metode) => { //rl : interface input terminal
-            if (metode === "1") { //opsi 1
-                rl.question("Masukkan kata kunci: ", (keyword) => {
-                    const hasil = this.buku.filter(buku =>
-                        buku.judul.toLowerCase().includes(keyword.toLowerCase()) ||
-                        buku.penulis.toLowerCase().includes(keyword.toLowerCase())
-                    );
-                    tampilkanHasilPencarian(hasil);
-                });
-            } else if (metode === "2") { //opsi 2
-                rl.question("Masukkan harga minimum: ", (min) => {
-                    rl.question("Masukkan harga maksimum: ", (max) => {
+        rl.question("Pilih metode pencarian (1-3): ", (metode) => {
+            switch (metode) {
+                case "1":
+                    rl.question("Masukkan kata kunci judul/penulis: ", (keyword) => {
                         const hasil = this.buku.filter(buku =>
-                            buku.harga >= parseInt(min) && buku.harga <= parseInt(max) //batas bawah & batas atas
+                            buku.judul.toLowerCase().includes(keyword.toLowerCase()) ||
+                            buku.penulis.toLowerCase().includes(keyword.toLowerCase())
                         );
                         tampilkanHasilPencarian(hasil);
                     });
-                });
-            } else {
-                console.log(" ❌ Pilihan tidak valid!\n ");
-                kembaliKeMenu();
+                    break;
+    
+                case "2":
+                    rl.question("Masukkan tahun terbit: ", (tahun) => {
+                        const hasil = this.buku.filter(buku => buku.tahun == tahun);
+                        tampilkanHasilPencarian(hasil);
+                    });
+                    break;
+    
+                case "3":
+                    rl.question("Masukkan harga minimum: ", (min) => {
+                        rl.question("Masukkan harga maksimum: ", (max) => {
+                            const hasil = this.buku.filter(buku => buku.harga >= min && buku.harga <= max);
+                            tampilkanHasilPencarian(hasil);
+                        });
+                    });
+                    break;
+    
+                default:
+                    console.log("❌ Pilihan tidak valid! Masukkan angka 1-3.");
+                    kembaliKeMenu();
             }
         });
     },
@@ -153,7 +163,7 @@ function tampilkanHasilPencarian(hasil) {
 //Function for back to menu
 function kembaliKeMenu() {
     rl.question("\nTekan ENTER untuk kembali ke menu...", () => {
-        console.clear();
+        console.clear(); // fungsi enter
         tampilkanMenu();
     });
 }
