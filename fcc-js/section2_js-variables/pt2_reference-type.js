@@ -32,14 +32,14 @@ let course_ = {
 
 // ! we can access the name value throught 2 notation, dot notation and bracket notation
 
-// * dot notation 
+//* ( . ) dot notation 
 // console.log(course.name);
 
 // course.name = "Javascript Fundamentals";
 // console.log(course.name);
 // ! we can override or changed the value as well
 
-// * bracket notation
+//* ( [] ) bracket notation
 // console.log(course['name']);
     
 course['name'] = 'Javascript 101';
