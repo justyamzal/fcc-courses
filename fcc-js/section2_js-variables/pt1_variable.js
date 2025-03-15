@@ -1,7 +1,7 @@
 //--- STARTED ---//
 // console.log("Hello World!!");
 
-// * let : defines data and can be changed and reassign later
+// * variable/let : defines data and can be changed and reassign later
 // let message = "Hello";
 // message = "World";
 // console.log(message);
