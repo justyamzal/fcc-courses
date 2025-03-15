@@ -34,3 +34,5 @@ favoriteFruit = null;
 // * Symbol : create unique identifiers and object
 const uniqueKey = Symbol();
 // console.log(uniqueKey);
+
+

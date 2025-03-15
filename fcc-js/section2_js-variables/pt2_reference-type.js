@@ -1,4 +1,4 @@
-// --- REFERENCE DATA TYPE / OBJECT DATA  --- / 
+// --- OBJECT DATA /REFERENCE DATA TYPE   --- / 
 /* can have a more complex structure and they hold key value pairs, this enables us to store more than one variable all in one */
 
 
@@ -16,17 +16,6 @@ let course = {
 ex: typeof 'taco', typeof 0, typeof undefined, etc */
 
 
-// --- Dynamic Typing 
-/* javascript is a languange that allows you to initialize a variable an assign it to a different or any other data type as know as dynamicly type
-*/
-let firstName = "Steven";
-// console.log(typeof firstName);
-
-firstName = 100;
-// console.log(typeof firstName);
-
-firstName = true;
-// console.log(typeof firstName);
  
 // ! this potentially cause bugs, so you need to be careful 
 
@@ -34,12 +23,12 @@ firstName = true;
 /* Object is a fundamental data type in javascript that allows you to store key value pairs */
 
 // * Object
-let course = {
+let course_ = {
     name : "Javascript for Beginners",
     hours : 3 
 };
 
-// console.log(course); 
+// console.log(course_); 
 
 // ! we can access the name value throught 2 notation, dot notation and bracket notation
 
