@@ -4,10 +4,10 @@
 
 // * Object
 
-// let course = {
-//     name : "Javascript for Beginners",
-//     hours : 3 
-// };
+let course = {
+    name : "Javascript for Beginners",
+    hours : 3 
+};
 
 // console.log(course);
 
