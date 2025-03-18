@@ -242,7 +242,7 @@ Menggunakan .reduce() untuk menjumlahkan semua angka.
 */
 
 /*
-* Kesimpulan
+* KESIMPULAN
 -----------------------------------------------------------------------
 Metode	                 ||    Cocok Digunakan Ketika
 -----------------------------------------------------------------------

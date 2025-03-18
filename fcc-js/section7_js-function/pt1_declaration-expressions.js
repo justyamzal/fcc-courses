@@ -123,14 +123,15 @@ IIFE digunakan untuk membuat fungsi yang langsung dipanggil setelah dideklarasik
  })();  //! Output: Fungsi ini langsung berjalan!
 
 /*
-* Kesimpulan
----------------------------------------------------------------
-Kapan digunakan?	Function Declaration	        Function Expression
----------------------------------------------------------------
-Butuh hoisting? 	        ✅ Ya	                    ❌ Tidak
-Digunakan sebagai callback?	🚫 Jarang	                ✅ Sering
-Digunakan untuk rekursi?	✅ Ya                       	✅ Bisa
-Dijalankan langsung (IIFE)?	🚫 Tidak bisa	✅ Bisa
+* KESIMPULAN
+---------------------------------------------------------------------------------
+Kapan digunakan?            Function Declaration	        Function Expression
+---------------------------------------------------------------------------------
+Butuh hoisting? 	            ✅ Ya	                        ❌ Tidak
+Digunakan sebagai callback?	    🚫 Jarang	                     ✅ Sering
+Digunakan untuk rekursi?	    ✅ Ya                           	✅ Bisa
+Dijalankan langsung (IIFE)?	    🚫 Tidak bisa	                 ✅ Bisa
+---------------------------------------------------------------------------
 Jika butuh fungsi global yang mudah diakses, gunakan Function Declaration.
 Jika butuh callback, modularisasi, atau fungsi anonim, gunakan Function Expression.
 */

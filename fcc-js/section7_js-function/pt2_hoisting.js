@@ -86,7 +86,7 @@ let greetings = function(name) {
 
 
 /*
-Kesimpulan: Bagaimana Hoisting Bekerja?
+* KESIMPULAN: Bagaimana Hoisting Bekerja?
 ------------------------------------------------------------------------------------
 Jenis Deklarasi          ||	Di-Hoist?	||          Bisa Dipanggil Sebelum Deklarasi?
 ------------------------------------------------------------------------------------
