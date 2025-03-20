@@ -9,7 +9,7 @@ Dalam JavaScript, scope (cakupan) menentukan di mana variabel dapat diakses dala
 */
 
 /*
-* ---🎯 1. Global Scope (Cakupan Global) ---
+* --- 🎯 1. Global Scope (Cakupan Global) ---
 📌 Variabel global adalah variabel yang dideklarasikan di luar fungsi atau blok. Variabel ini bisa digunakan di mana saja dalam program.
 
 Contoh Global Scope
@@ -29,7 +29,7 @@ showGlobal();
 Variabel global mudah diubah dari bagian mana pun dalam kode, yang bisa menyebabkan bug.
 */
 
-//❌ Contoh Masalah dengan Variabel Global // 
+//* ❌ Contoh Masalah dengan Variabel Global // 
 
 let counter = 1;
 function increment(){
