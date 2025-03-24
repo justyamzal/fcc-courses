@@ -13,37 +13,59 @@ Dalam JavaScript, Finding Elements (Primitives) berarti mencari elemen dalam arr
 */
 
 /*
-* 📌 1️⃣ indexOf() → Mencari Indeks Elemen Pertama yang Cocok
+* -----📌 1️⃣ indexOf() → Mencari Indeks Elemen Pertama yang Cocok -----
 Metode indexOf() mencari nilai dalam array dan mengembalikan indeks pertama di mana elemen tersebut ditemukan. Jika tidak ditemukan, mengembalikan -1.
 
-Contoh:
+* --- EXAMPLE --- :
 */
 let score = [10, 20, 30, 40, 50];
 
-// console.log(score.indexOf(30));
-// console.log(score.indexOf(100));
+// console.log(score.indexOf(30)); //! ➡ 30 ditemukan di indeks 2.
+// console.log(score.indexOf(100)); //! Output : -1
 
-//! ➡ 30 ditemukan di indeks 2.
+
 //! ➡ Jika elemen tidak ditemukan, indexOf() mengembalikan -1.
 //! 📌 Gunakan indexOf(value) saat ingin mengetahui di mana posisi elemen dalam array.
 
 /*
-*📌 2️⃣ lastIndexOf() → Mencari Indeks Elemen Terakhir yang Cocok
+* ----- 📌2️⃣ lastIndexOf() → Mencari Indeks Elemen Terakhir yang Cocok -----
 Mirip dengan indexOf(), tetapi mencari dari belakang.
 
-Contoh:
+* --- EXAMPLE --- :
 */
 
 let values_ = [10, 20, 30, 40, 50];
 // console.log(values_.lastIndexOf(30));  // output : 2, menghitung index dari belakang
 
+const Numbers = [5, 4, 3, 2, 1, 3];
+
+
+const indexOfThree = Numbers.indexOf(3);
+// console.log(indexOfThree); //! Output: 2
+
+const lastIndexOfThree =  Numbers.lastIndexOf(3);
+// console.log(lastIndexOfThree); //! Output : 5
+
+const indexOfTen = Numbers.lastIndexOf(10);
+if (indexOfTen === -1) {
+    // console.log('10 is not found in the array');
+} 
+
+if(!Numbers.includes(10)) {
+    // console.log('10 is not found in the array');
+}
+// console.log(indexOfTen); //!Output : -1
+// console.log(Numbers[indexOfTen]); //!Output : undefined
+
+   
+
+
 
 /*
-
-* 📌 3️⃣ includes() → Mengecek Apakah Elemen Ada di Array
+* ----- 📌 3️⃣ includes() → Mengecek Apakah Elemen Ada di Array -----
 Metode includes() mengecek apakah array memiliki elemen tertentu dan mengembalikan true atau false.
 
-Contoh:
+* --- EXAMPLE --- :
 */
 
 let juices = ["avocado","banana","cherry"];
@@ -58,14 +80,36 @@ let juices = ["avocado","banana","cherry"];
 */
 
 /*
-* 📌 4️⃣ find() → Mencari Elemen Pertama yang Memenuhi Kondisi
+* -----📌 4️⃣ find() → Mencari Elemen Pertama yang Memenuhi Kondisi -----
 Metode find() digunakan untuk mencari elemen pertama yang sesuai dengan kondisi yang diberikan dalam sebuah fungsi callback.
 
-Contoh:
+* --- EXAMPLE --- :
 */
 let _Values = [10,20,30,40,50];
 let theResult = _Values.find(val => val > 25);
 // console.log(theResult); //! Output: 30 (karena 30 adalah angka pertama yang lebih dari 25)
+
+
+const staffs = [
+    {
+        id:1,
+        name: 'Jim'
+    },
+    {
+        id:2,
+        name: 'Michael'
+    },
+    {
+        id:3,
+        name: 'Pam'
+    }
+]
+
+const staff = staffs.find(function(e){
+    return e.name === 'Jim';
+});
+// console.log(staff);
+
 
 
 /*
@@ -76,10 +120,10 @@ let theResult = _Values.find(val => val > 25);
 
 
 /*
-* 📌 5️⃣ findIndex() → Mencari Indeks Elemen Pertama yang Memenuhi Kondisi
+* ----- 📌 5️⃣ findIndex() → Mencari Indeks Elemen Pertama yang Memenuhi Kondisi -----
 Metode findIndex() sama seperti find(), tetapi mengembalikan indeks dari elemen yang ditemukan, bukan nilainya.
 
-Contoh:
+* --- EXAMPLE --- :
 */
 let _values = [10, 20, 30, 40, 50];
 let _index = _values.findIndex(val => val > 25);

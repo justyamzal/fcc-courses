@@ -51,17 +51,22 @@ Contoh:
 
 let _fruits = ["Apple", "Banana"];
 
-//! Menambahkan elemen di akhir	 
+//*  ----- Menambahkan elemen di akhir (PUSH) -----
 _fruits.push("Cherry","Durian"); //[ 'Apple', 'Banana', 'Cherry', 'Durian']
 
-//! Menghapus elemen terakhir
+//* ----- Menghapus elemen terakhir (POP) -----
 _fruits.pop(); //[ 'Apple', 'Banana', 'Cherry']
 
-//! Menambahkan elemen di awal	
+//* ----- Menambahkan elemen di awal (UNSHIFT) -----
 _fruits.unshift("Avocado"); //[ 'Avocado', 'Apple', 'Banana', 'Cherry']
+_fruits.unshift("Avocado","Apricot"); //[ 'Avocado', 'Apple', 'Banana', 'Cherry']
 
-//! Menghapus elemen pertama
+
+//* ----- Menghapus elemen pertama (SHIFT) -----
 _fruits.shift(); //[ 'Apple', 'Banana', 'Cherry']
+
+//* ----- Menambahkan elemen ditengah array ( .SPLICE() ) -----
+
 
 // console.log(_fruits);
 
@@ -94,7 +99,7 @@ let sliced = combined.slice(2, 5);  // Output: [3, 4, 5]
 */
 
 /*
-* 3️⃣ Mengubah Array (Splice) 
+* 3️⃣ Mengubah Array /Menambahkan elemen ditengah array ( .Splice() ) 
 _______________________________________________________________________________
 Method	      || Deskripsi	                                || Contoh
 -------------------------------------------------------------------------------
@@ -105,28 +110,37 @@ Method	      || Deskripsi	                                || Contoh
 let values = [10, 20, 30, 40, 50];
 values.splice(2, 1, 25, 26); //! Menghapus 1 elemen dari indeks 2 dan menambahkan 25, 26
 
+let values2 = [10, 20, 30, 40, 50];
+
+values2.splice(1, 0, 25, 26); //! tidak mau menghapus 1 element pun maka
+
+
 // console.log(values); //! Output: [10, 20, 25, 26, 40, 50]
 
-// ➡ Menghapus angka 30 di indeks 2 lalu menggantinya dengan 25, 26.
+// console.log(values2); //! Output: [10, 25, 26, 20, 30, 40, 50]
+
+//n: ➡ Menghapus angka 30 di indeks 2 lalu menggantinya dengan 25, 26.
+
+// -----  ITERATING AN ARRAY ----- //
 
 /*
 * --- 📌 Looping dalam Array (For Loop, For Each) ---
 ---------------------------------------------------------
 
-* 1️⃣ Menggunakan for Loop
+* ----- 1️⃣ Menggunakan for Loop -----
 */
 
 let theFruits = ["Apple", "Banana", "Cherry"];
 for (let i = 0; i < theFruits.length; i++) {
-    // console.log(theFruits[i]);
+    // console.log(theFruits[i]); //! Apple; Banana; Cherry
 }
 
 /*
-* 2️⃣ Menggunakan forEach()
+* ----- 2️⃣ Menggunakan forEach() -----
 */
 
 theFruits.forEach((theFruits) => {
-    // console.log(theFruits);
+    // console.log(theFruits);  //! Apple; Banana; Cherry
 });
 
 //n: ➡ Lebih sederhana dibanding for loop.
@@ -154,7 +168,7 @@ let matrix = [
 ✅ Looping (for, forEach) sering digunakan untuk mengolah array.
 */
 
-
+// -----  SPREAD OPERATOR (...) ----- // 
 /*
 * --- 📌 Menambahkan Elemen dengan Operator Spread (...) ----
 ---------------------------------------------------------------
@@ -224,11 +238,12 @@ chatMessages.unshift("Hey!");  // Pesan terbaru ada di awal
 //n: lebih lengkap bisa kembali ke sisi atas, ADDING ELEMENTS (MANIPULATION ELEMENT)
 
 /*
-* Metode untuk menghapus elemen dari array:
+* --- Metode untuk menghapus elemen dari array: --- 
 
-- Akhir (pop())
-- Awal (shift())
-- Tengah (splice())
+?- Akhir (pop())
+?- Awal (shift())
+?- Tengah (splice())
+
 🔹 Contoh Implementasi :
 */
 const Fruits = ["Avocado", "Banana","Cherry","Durian","Eggplant"];
@@ -271,13 +286,19 @@ numbers_.splice(0, numbers_.length);
 const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
 
-// Menggabungkan array
+//* Menggabungkan array (CONCAT Method)
 const combined_ = array1.concat(array2);
 // console.log(combined_); // [ 1, 2, 3, 4, 5, 6 ]
-
-// Memotong array
+ 
+//* Memotong array (SLICE Method)
 const sliced_ = combined_.slice(2, 4);
-// console.log(sliced_);
+// console.log(sliced_); //! [3, 4]
+
+const secondSlice = combined_.slice(0);
+// console.log(secondSlice); //! [ 1, 2, 3, 4, 5, 6 ]
+const firstSlice = combined_.slice(0, 4);
+// console.log(firstSlice); //! from 0 -> until 4,  Output: [ 1, 2, 3, 4 ]
+
 
 /*
 *🔍 Bagaimana slice(2, 4) menghasilkan [3, 4]?
@@ -306,19 +327,38 @@ Metode slice(start, end) mengambil elemen dari index start hingga sebelum end, t
 
 // - Spread Operator
 // -----  SPREAD OPERATOR (...) ----- //
-/* 
+/*  using three dots in order to copy over an object, this is more common use to 
 ! Alternatif untuk .concat() */
-
+ 
 const _combined = [ ...array1, ...array2 ];
-// console.log(_combined);
+// console.log(_combined); //! [ 1, 2, 3, 4, 5, 6 ]
+
+let a = [1, 2];
+let b = [...a];
+// console.log(b); //[ 1, 2 ]
 
 
 // - Joining Arrays
-// -----  JOINING ARRAYS ----- //
+// ----- JOINING ARRAYS ----- //
 
 /*
 Mengubah array menjadi string.
 🔹 Contoh Implementasi
 */
 const words = ["Hello", "World"];
-// console.log(words.join(" ")); //Hello World
+// console.log(words.join(" ")); //!Hello World
+
+const theNumbers = [1, 2, 3, 4, 5];
+const joinedNumbers = theNumbers.join(', ');
+// console.log(joinedNumbers);
+
+const courseName = 'Javascript for Beginners';
+const parts = courseName.split(' '); //! [ 'Javascript', 'for', 'Beginners' ]
+// console.log(parts);
+
+const urlSlug = parts.join('-');
+// console.log(urlSlug); //! Javascript-for-Beginners
+
+const lowercaseCourseName = courseName.toLocaleLowerCase();
+// console.log(lowercaseCourseName);
+
