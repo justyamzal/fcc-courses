@@ -17,7 +17,7 @@ Function Declaration dapat dipanggil sebelum deklarasinya dalam kode karena hois
 Contoh: Function Declaration yang di-hoist
 */
 
-console.log(_greet("Alice"));
+// console.log(_greet("Alice"));
 function _greet(name) {
     return `Hello, my name ${name}`;
 }
@@ -34,6 +34,16 @@ Contoh: Hoisting pada var
 // console.log(a); //! Output: undefined
 // var a = 10; //! Nilai diberikan
 // console.log(a); //! Output: 10
+
+add(2,2 );
+
+function add (num1, num2) {
+    // console.log(num1 + num2);  //! Output: 4
+}
+let add = function(num1, num2) { 
+    // console.log(num1 + num2); //! Output: cant be run
+}
+
 
 /*
 Apa yang terjadi di belakang layar?

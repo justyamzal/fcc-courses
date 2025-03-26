@@ -11,7 +11,9 @@ Dalam JavaScript, ketika this digunakan di luar fungsi atau objek, ia mereferens
 
 📌 Contoh di Browser (Global Context)
 */
-// console.log(this); //! ✅ Output: Window (di browser)
+
+ // console.log(this); //! ✅ Output: Window (di browser)
+
 //n: 📌 Dalam lingkungan browser, this merujuk ke window.
 
 
@@ -126,7 +128,7 @@ sayHello.call(person);
 Mirip dengan call(), tapi menerima array sebagai argumen.
 */
 function introduce(city, country) {
-    console.log(`I am ${this.name} from ${city}, ${country}`);
+    // console.log(`I am ${this.name} from ${city}, ${country}`);
 }
 
 introduce.apply(person,["jakarta","Indonesia"]);
@@ -138,6 +140,23 @@ bind() mengembalikan fungsi baru dengan this yang tetap.
 */
 const boundFunction = sayHello.bind(person);
 boundFunction(); // ✅ Output: Hello, my name is David
+
+
+const course = {
+    name: 'ES6 syntax',
+    start: () => {
+        console.log(this.name);
+    }
+}
+
+// course.start(); //!undefined , this because when u using the arrow function the this. keyword from it's parent scope so in this case from the global object, since the global object doesnt have property, this value would be undefined
+
+function introduce(languange) {
+    // console.log(this.name + ' teaches ' + languange);
+}
+const instructor = {name : 'Steven'};
+const introduction = introduce.bind(instructor);
+introduction('JavaScript');
 
 //!📌 bind() tidak langsung memanggil fungsi, tetapi mengembalikan fungsi baru.
 
@@ -180,7 +199,12 @@ Class	                  ||  Instance dari class tersebut
 
 
 /*
+
+
 */
+
+
+
 /*
 */
 

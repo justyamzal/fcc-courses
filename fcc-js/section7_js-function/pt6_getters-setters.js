@@ -13,6 +13,30 @@ Getter (get) dan Setter (set) adalah fitur dalam JavaScript yang digunakan untuk
 
 */
 
+const course = {
+    name: 'Javascript for beginners',
+    duration: '3 hours',
+    get details() {
+        return `${this.name} is ${this.duration}`;
+    },
+    set details(value) {
+        let parts = value.split(' is ');
+        this.name = parts[0];
+        this.duration = parts[1];
+    }
+};
+
+console.log( course.details );
+
+course.details = 'Javascript Pro is 10 Hours';
+console.log(course.details);
+ 
+/*
+? What are the get and set keywords? the get and set keyword can be used within object literals or classes in order to define getter and setter, this enables you to use a method as if were property. the benefit to use getter and setter is that can improve data and encapsulation and provide a more intuitive interface for interacting with an objects
+
+! get dan set mempermudah dalam memanipulasi property dari object dengan baik, get sebagai parameter untuk menerima dan menampilkan output, set sebagai keyword berupa input dan di eksekusi dalam console
+*/
+
 /*
 * 1. Membuat Getter dan Setter dalam Objek
 Kita bisa menambahkan get dan set pada objek biasa.
@@ -513,8 +537,11 @@ hero.level = 15;
 
 //! 📌 Di sini _level digunakan untuk memastikan karakter tidak bisa menurunkan levelnya.
 
-/* */
-/**/
+/*
+  * EXAMPLE :
+*/
+
+
 /**/
 /**/
 /**/

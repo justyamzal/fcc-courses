@@ -9,6 +9,9 @@ Kedua metode ini memiliki perbedaan penting dalam cara kerja dan perilaku mereka
 
 /*
 * 1. Function Declaration
+
+* function declaration are the traditional syntax to create function in javascript
+
 Function Declaration adalah cara standar mendefinisikan fungsi dengan menggunakan kata kunci function. Fungsi ini memiliki nama dan dapat dipanggil dari mana saja dalam cakupan (scope) di mana fungsi tersebut berada.
 
 * Ciri-ciri Function Declaration:
@@ -19,6 +22,20 @@ Function Declaration adalah cara standar mendefinisikan fungsi dengan menggunaka
 
 
 /* Contoh Function Declaration: */
+
+function sayHi(){
+    console.log("Hi");
+}
+
+//sayHi();    //Output: Hi
+
+let sayHi_ = function() {
+    // console.log("Hi");
+};
+
+sayHi_();  //Output: Hi
+
+
 function sayHello(name) {
     return `Hello, ${name}!`;
 }

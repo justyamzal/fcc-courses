@@ -6,13 +6,31 @@ Dalam JavaScript, scope (cakupan) menentukan di mana variabel dapat diakses dala
 
 1️⃣ Global Scope → Variabel yang dapat diakses dari mana saja dalam program.
 2️⃣ Local Scope → Variabel yang hanya dapat diakses dalam fungsi atau blok tertentu.
+
+
+*Global Scope :
+- Variables declared outside any function, block, or conditional statement have global scope .
+- These variables are accessible from any part of the code after their declaration.
+- Example: Declaring a variable like const name = "Steven" globally allows it to be accessed anywhere in the script.
+- However, overusing global variables can lead to issues like global pollution , conflicts in large applications, and integration problems with third-party libraries.
+
+*Local Scope :
+- Variables declared within a function, block (e.g., inside curly braces {}), or conditional statement have local scope .
+- These variables are only accessible within the confines of their block or function.
+- Example: If a variable is declared inside a block or function, attempting to access it outside results in a reference error .
+- Local scope helps maintain code clarity, ensures data is only accessible where needed, and improves performance since JavaScript engines optimize local variables better than global ones.
+
 */
+
+
+
+
 
 /*
 * --- 🎯 1. Global Scope (Cakupan Global) ---
 📌 Variabel global adalah variabel yang dideklarasikan di luar fungsi atau blok. Variabel ini bisa digunakan di mana saja dalam program.
 
-Contoh Global Scope
+* Contoh Global Scope
 */
 let globalVar = "Saya variable global";
 
@@ -173,9 +191,13 @@ Lexical Scope	    Dalam fungsi dalam fungsi	Bisa akses variabel dari fungsi indu
 */
 
 /*
+ 
 */
 
+
+
 /*
+
 */
 
 /*

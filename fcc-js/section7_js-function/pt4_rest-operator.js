@@ -2,7 +2,7 @@
 /*
 * REST Operator (...) dalam JavaScript
 Apa Itu REST Operator (...)?
-Rest Operator (...) adalah fitur di JavaScript yang memungkinkan kita menggabungkan sejumlah argumen menjadi satu array. Rest Operator sangat berguna ketika kita tidak tahu jumlah argumen yang akan diterima oleh fungsi.
+Rest Operator (...) adalah fitur di JavaScript yang memungkinkan kita cloning, menggabungkan sejumlah argumen menjadi satu array. Rest Operator sangat berguna ketika kita tidak tahu jumlah argumen yang akan diterima oleh fungsi.
 Cara Penulisan:
 */
 
@@ -138,19 +138,25 @@ Contoh Perbedaan
 
 //! REST : Menggabungkan beberapa nilai menjadi satu array
 function restExample(...numbers) {
-    console.log(numbers); //Output: [1,2,3,4]
+    // console.log(numbers); //Output: [1,2,3,4]
 }
 restExample(1,2,3,4);
 
 //! SPREAD: Menyebarkan array menjadi elemen individual
 const theNumbers = [1,2,3,4];
-console.log(...theNumbers);  // Output: 1 2 3 4
+// console.log(...theNumbers);  //Output: 1 2 3 4
 
 /*
 📌 Kesimpulan:
 Rest mengumpulkan data dalam array.
 Spread menyebarkan elemen dari array atau object.
 */
+
+function multiply_(multiplier, ...numbers) {
+    return numbers.map(number => number * multiplier)
+}
+
+// console.log(multiply_ (2, 1, 2, 3, 4)); //Output :  [ 2, 4, 6, 8 ]
 
 
 /*
@@ -168,6 +174,12 @@ Bisa Digunakan dalam Function Expression?	✅ Ya
 ✔ Gunakan Rest Operator dalam destructuring untuk menangkap sisa elemen array atau properti object.
 ✔ Jangan gunakan Rest Operator di awal atau tengah parameter fungsi (harus di akhir).
 */
-/**/
+
+
+/*
+? what is the rest operator? the rest operator allows you to identify number of arguments as an array this is useful when working with functions that can accept a variable number of arguments
+*/
+
+
 /**/
 /**/

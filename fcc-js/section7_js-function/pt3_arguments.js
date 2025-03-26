@@ -22,6 +22,26 @@ showArguments(1, "Hello", true);
 Fungsi showArguments dipanggil dengan tiga argumen.
 arguments berisi semua nilai yang diberikan ke fungsi, dalam bentuk array-like object.*/
 
+function multiply(num1, num2) {
+    console.log(arguments);  //! every function in javascript has access to a special object named arguments
+    return num1 * num2;
+}
+
+// console.log(multiply(2,2));  //!Output : 4
+// console.log(multiply(2, 2, 4));  //!Output : 4
+// console.log(multiply(2)); //!Output : NaN
+
+
+function multiply2(num1, num2) {
+    let product = 1;
+    for(const num of arguments)
+        product *= num;
+    return product;
+}
+
+console.log(multiply2(2, 2, 4)); //Output : 16
+
+
 
 /*
 * 2. Mengakses Elemen arguments Secara Individu
@@ -242,7 +262,7 @@ Menggunakan .reduce() untuk menjumlahkan semua angka.
 */
 
 /*
-* KESIMPULAN
+* KESIMPULAN 
 -----------------------------------------------------------------------
 Metode	                 ||    Cocok Digunakan Ketika
 -----------------------------------------------------------------------

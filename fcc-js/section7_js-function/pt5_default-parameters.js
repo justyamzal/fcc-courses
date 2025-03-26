@@ -1,7 +1,9 @@
 //---------- DEFAULT PARAMETER ----------//
 
 /*
-Apa Itu Default Parameter?
+* Apa Itu Default Parameter?
+Default parameters allow function to have a predefine values that are used if no argument is passed to the function
+
 Default parameter dalam JavaScript memungkinkan kita memberikan nilai default pada parameter fungsi jika tidak ada argumen yang diberikan saat fungsi dipanggil.
 */
 
@@ -34,6 +36,32 @@ function hello2(name = "Guest2"){
 Jika name diberikan, maka nilai name akan digunakan.
 Jika name tidak diberikan atau bernilai undefined, maka "Guest" akan digunakan sebagai default.
 */
+
+function writeCode(languange = "Javascript") { //default parameters
+    console.log(`Write code in ${languange}`);
+}
+
+
+// writeCode('PHP');
+// writeCode('C#');
+// writeCode(); //without default parameters it's gonna be undefined
+
+function codeDetails(languange = 'Javascript', tool = 'VS Code') {
+    // console.log(`Writing code in ${languange} using ${tool}`);
+}
+
+// codeDetails(); //Writing code in Javascript using VS Code
+// codeDetails("Python"); //Writing code in Pythong using VS Code
+// codeDetails("C#","Visual Studio"); //Writing code in C# using Visual Studio
+
+function createUser(name,role ='guest', status ='active') {
+    // console.log(`User: ${name}, Role: ${role}, Status:${status}`);
+}
+
+// createUser('Steven');
+// createUser('Alice','admin','active');
+
+
 
 
 /*
