@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Element</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+          *{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            background: linear-gradient(#0f2027,#203a43,#2c5364);
+            height: 100vh;
+            font-family: 'Lato',sans-serif;
+            border: solid 15px #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+          }
+
+          #movie li {
+            margin-bottom: 10px;
+            border: solid 2px #fff;
+            padding: 5px;
+            cursor: pointer;
+
+          }
+
+          .div2 {
+            border: solid 10px #fff;
+            border-radius: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            color: #fff;
+          }
+          .container {
+            border: solid 5px #fff;
+            border-radius: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+          }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1 id="main-heading">Favourite Movie Franchise</h1>
+        <ul id="movie">
+            <li id="firstItem" class="list-items">The Matrix</li>
+            <li id="secondItem" class="list-items">Stars Wars</li>
+            <li id="thirdItem" class="list-items">Harry Potter</li>
+            <li id="fourthItem" class="list-items">Lord of The Rings</li>
+            <li id="fifthItem" class="list-items">Marvel</li>
+        </ul>
+    </div>
+    
+     <!-- <script src="app.js"></script> -->
+     <script>
+      //*--- DOM MANIPULATION ---//
+
+      //--- GetElementById()
+      const title = document.getElementById('main-heading');
+      // console.log(title);
+      // console.log(title.textContent)
+
+      //--- GetElementByClassName()
+      const listItems = document.getElementsByClassName('list-items');
+      // console.log(listItems);
+      
+      //--- GetElementByTagName()
+      const listTagName = document.getElementsByTagName('li');
+      // console.log(listTagName);
+
+      /*--- querySelector() 
+      : Definisi : document.querySelector adalah metode bawaan JavaScript yang digunakan untuk memilih elemen pertama dalam DOM yang cocok dengan selector CSS tertentu.
+      */
+
+      const containerQuerySelector = document.querySelector('div');
+      // console.log(containerQuerySelector);
+      const firstItemSelector = document.querySelector('.list-items'); //! querySelector: Hanya memilih elemen pertama
+      // console.log(firstItemSelector.textContent); //Output: The Matrix
+
+      const secondItemSelector = document.querySelector('#secondItem');
+      // console.log(secondItemSelector.textContent); 
+      const thirdItemSelector = document.querySelector('#thirdItem');
+      //  console.log(thirdItemSelector.textContent);
+      const fourthItemSelector = document.querySelector('#fourthItem');
+      //  console.log(fourthItemSelector.textContent);
+      const fifthItemSelector = document.querySelector('#fifthItem');
+      //  console.log(fifthItemSelector.textContent);
+
+      /*--- querySelectorAll 
+      : Definisi : document.querySelectorAll adalah metode bawaan JavaScript yang digunakan untuk memilih semua elemen dalam DOM yang cocok dengan selector CSS tertentu. */
+      
+      const itemQuerySelectorAll = document.querySelectorAll('.list-items');
+      // console.log(itemQuerySelectorAll); //Output: [li#firstItem.list-items, li#secondItem.list-items, li#thirdItem.list-items, li#fourthItem.list-items, li#fifthItem.list-items]
+      
+      itemQuerySelectorAll.forEach(items => console.log(items.textContent));  //Output: The Matrix ; Stars Wars; Harry Potter; Lord of The Rings;  Marvel
+      
+
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            transition: width 0.3s ease-in-out; /* Menambahkan transisi lebar selama 0.3 detik untuk efek animasi halus.*/
+        }
+        .content-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 2px solid white; */
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 600px;
+            transition: all 0.3s ease-in-out; /* Menambahkan transisi untuk semua properti selama 0.3 detik.*/
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .reveal-btn {
+            padding: 20px;
+            cursor: pointer;
+            /* border: 2px solid white; */
+            background: none;
+            color: white;
+            font-size: 18px;
+            /* flex: 1; */
+            text-align: center;
+            /* gap: 20px; */
+        }
+        .hidden-content {
+            display: none;
+            padding: 20px;
+            /* border-left: 2px solid white; */
+            flex: 1;
+            overflow: visible;
+            white-space: normal;
+            word-wrap: break-word;
+            text-align: justify;
+        }
+        .expanded {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Listeners</h1>
+        <div class="box content-box">
+            <button class="reveal-btn">Reveal More</button>
+            <div class="hidden-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure consequatur a numquam eligendi ab tempora, dolorum dolorem fuga labore quisquam debitis voluptatum officia neque, reiciendis deleniti vel qui explicabo. Aliquid suscipit, quibusdam laborum molestias cumque iste asperiores, minima culpa aperiam consectetur exercitationem unde minus officiis nihil! Esse natus cum eos ut, quis beatae temporibus vel delectus maiores quisquam culpa quibusdam sapiente eaque unde sequi. Soluta maiores molestias laborum facilis, quis suscipit aliquid tenetur vel, maxime vitae quia. Aliquid atque harum libero magni autem dolore, necessitatibus pariatur consequuntur inventore architecto natus minus voluptate sint facilis, nulla animi, nostrum expedita quae ab!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Event Listeners for the button
+        document.querySelector('.reveal-btn').addEventListener('click', function () {
+            const contentBox = document.querySelector('.content-box');
+            const hiddenContent = document.querySelector('.hidden-content');
+            
+            if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') { //if hiddenContent.style.display is 'none' or empty (''), do the show up / add the hidden content up
+                hiddenContent.style.display = 'block';
+                contentBox.classList.add('expanded');   
+            } else {                                    //if there is then you can do the remove hidden content display
+                hiddenContent.style.display = 'none';
+                contentBox.classList.remove('expanded');
+            }
+        });
+
+        /*
+
+        > Pengecekan kondisi :
+            - Jika hiddenContent.style.display adalah 'none' atau kosong (''), maka konten disembunyikan.
+            - Jika tidak, konten sedang ditampilkan.
+        > Aksi ketika konten disembunyikan :
+            - Set hiddenContent.style.display = 'block'; untuk menampilkan konten.
+            - Tambahkan kelas expanded ke contentBox untuk mengatur ulang layout.
+        > Aksi ketika konten ditampilkan :
+            - Set hiddenContent.style.display = 'none'; untuk menyembunyikan konten.
+            - Hapus kelas expanded dari contentBox.
+
+
+        Kode ini bekerja sebagai berikut:
+
+        1. Saat halaman dimuat, konten dengan kelas .hidden-content disembunyikan karena display: none.
+        2. Ketika pengguna mengklik tombol "Reveal More":
+            - Fungsi JavaScript memeriksa apakah konten disembunyikan.
+            - Jika ya, konten ditampilkan dengan mengubah display menjadi block dan menambahkan kelas expanded ke kontainer.
+            - Jika konten sudah ditampilkan, konten disembunyikan kembali dengan mengubah display menjadi none dan menghapus kelas expanded.
+        */
+    </script>
+</body>
+</html>

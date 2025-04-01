@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listeners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #1a1a1a;
+        color: white;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(to bottom, #2c3e50, #212f3d);
+        border-radius: 8px;
+      }
+
+      .hidden-content {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-button {
+        width: 200px;
+        height: 100px;
+        background: transparent;
+        border: 2px solid white;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        color: white;
+      }
+
+      .content-box {
+        flex: 1;
+        padding-left: 20px;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+        border: 2px solid white;
+        border-radius: 4px;
+        padding: 10px;
+        margin-left: 20px;
+      }
+
+      .expanded .content-box {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; margin-bottom: 20px">Event Listeners</h1>
+      <div class="hidden-content">
+        <button class="toggle-button">Reveal More</button>
+        <div class="content-box">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+            distinctio hic facilis, repudiandae incidunt quisquam neque officiis
+            quibusdam cum quam suscipit dolorem animi aliquid harum. Unde illo
+            aut officiis inventore quod quibusdam, ipsam aliquid reprehenderit
+            ad minima sit ipsa? Ducimus nesciunt laudantium deleniti porro
+            maxime molestias reiciendis, hic omnis?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const toggleButton = document.querySelector(".toggle-button");
+      const hiddenContent = document.querySelector(".hidden-content");
+      let isExpanded = false;
+
+      toggleButton.addEventListener("click", () => {
+        if (!isExpanded) {
+          hiddenContent.classList.add("expanded");
+          toggleButton.textContent = "Hide";
+        } else {
+          hiddenContent.classList.remove("expanded");
+          toggleButton.textContent = "Reveal More";
+        }
+        isExpanded = !isExpanded;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+    4. Selecting Elements in the DOM (0:04:01)
+    Untuk memanipulasi elemen dalam DOM, Anda perlu memilihnya terlebih dahulu. Ada beberapa metode untuk memilih elemen:
+
+        Metode Umum:
+        document.getElementById(id)
+        document.querySelector(selector)
+        document.querySelectorAll(selector)
+    -->
+    <h1 id="title">Selamat Datang</h1>
+    <p class="deskripsi">ini adalah paragraf deskripsi</p>
+    <p class="deskripsi2">ini adalah paragraf deskripsi</p>
+    <ul>
+        <li class="list-items">Satu</li>
+        <li class="list-items">Dua</li>
+        <li class="list-items">Tiga</li>
+    </ul>
+</body>
+
+</html>
+
+<script>
+    //* --- Selecting element by Id (getElementById) --- //
+    const title = document.getElementById('title');
+    // console.log(title);
+    // console.log(title.textContent);
+
+
+    //* --- Selecting element by Class Name ( getElementByClassName() ) --- //
+    const listItems = document.getElementsByClassName('list-items');
+    // console.log(listItems);
+
+
+
+    //* --- Selecting element by Tag Name ( getElementByTagName() ) --- //
+    const listItemsTag = document.getElementsByTagName('li');
+    // console.log(listItemsTag);
+    
+
+    //* --- Selecting element by querySelector ( querySelector() ) --- //
+    const deskripsi = document.querySelector('.deskripsi');
+    // console.log(deskripsi);
+    // console.log(deskripsi.textContent);// Output: Ini adalah paragraf deskripsi
+
+    //* --- Selecting element by querySelectorAll ( querySelectorAll() ) --- //
+    const allParagraph = document.querySelectorAll('p')
+    // console.log(allParagraph);
+
+
+
+</script>
+

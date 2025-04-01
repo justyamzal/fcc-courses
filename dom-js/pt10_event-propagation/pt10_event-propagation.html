@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> pt10_event-propagation - Event Propagation </title>
+</head>
+
+<body>
+
+<!-- 
+
+! Apa itu Event Propagation?
+Bayangkan DOM (Document Object Model) sebagai sebuah gedung bertingkat , di mana setiap lantai adalah elemen HTML. Misalnya:
+
+- Lantai 1: <html> (root node)
+- Lantai 2: <body>
+- Lantai 3: <div>, <p>, dll.
+
+Ketika Anda melakukan sesuatu (misalnya mengklik tombol), kejadian itu (event) tidak hanya terjadi di tempat Anda klik, tetapi juga merambat (propagate) melalui gedung ini dalam dua tahap:
+
+1.Tahap Penurunan (Capturing Phase) : Event bergerak dari lantai paling atas (root) ke lantai tempat Anda klik.
+2. Tahap Pemantulan (Bubbling Phase) : Event kembali naik dari lantai tempat Anda klik ke lantai paling atas.
+
+Ini mirip seperti ketika Anda melempar bola ke bawah tangga:
+    - Bola jatuh ke bawah (capturing phase).
+    - Setelah menyentuh lantai tertentu, bola memantul kembali ke atas (bubbling phase).
+--------------------------------------------------------------------------------------------------------------------
+! Kenapa Ini Penting?
+Event propagation penting karena:
+
+1. Anda bisa mengontrol di mana event ditangani : Anda bisa menangkap event saat turun (capturing) atau saat naik (bubbling).
+2. Efisiensi : Dengan memanfaatkan bubbling, Anda bisa menggunakan teknik event delegation (akan dijelaskan nanti) untuk menghemat kode.
+Ilustrasi Sederhana
+
+Mari kita gunakan contoh nyata:
+
+- HTML:
+
+<div id="parent">
+  <button id="child">Klik Saya</button>
+</div>
+
+<div> adalah induk (parent).
+<button> adalah anak (child).
+
+- JS :
+
+const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+
+! // Menambahkan event listener ke parent
+parent.addEventListener('click', () => {
+  console.log('Parent diklik!');
+});
+
+! // Menambahkan event listener ke child
+child.addEventListener('click', () => {
+  console.log('Child diklik!');
+});
+
+
+? Apa yang Terjadi Saat Anda Klik Tombol?
+    1. Ketika Anda mengklik tombol (child), event dimulai dari atas (root node) dan turun ke tombol (capturing phase).
+    2. Setelah sampai di tombol, event diproses di tombol (target phase), sehingga console.log('Child diklik!') dieksekusi.
+    3. Kemudian, event "memantul" kembali ke atas (bubbling phase), sehingga console.log('Parent diklik!') juga dieksekusi.
+
+    Output di Console:
+    1. Child diklik!
+    2. Parent diklik!
+
+? Bagaimana Cara Menghentikan Perambatan?
+Jika Anda ingin event hanya diproses di satu elemen saja (misalnya hanya di tombol), Anda bisa menggunakan metode .stopPropagation().
+
+Contoh:
+
+        child.addEventListener('click', (event) => {
+        console.log('Child diklik!');
+        event.stopPropagation(); // Menghentikan event agar tidak merambat ke atas
+        });
+
+Sekarang, jika Anda mengklik tombol, outputnya hanya:
+    
+    Output di Console:
+    1. Child diklik!
+
+-->
+
+    <!--
+    Event propagation adalah alur perjalanan event di DOM, yang terdiri dari dua fase:
+
+        Capturing Phase : Event bergerak dari root node ke target node.
+        Bubbling Phase : Event bergerak dari target node kembali ke root node.
+    Contoh: 
+ -->
+ <div id="parent">
+    <button id="child">Klik Saya</button>
+</div>
+
+</body>
+</html>
+
+<script>
+    const parent = document.getElementById('parent');
+    const child = document.getElementById('child');
+
+    parent.addEventListener('click', () => {
+        console.log('Parent clicked');
+    });
+
+    child.addEventListener('click', (event) => {
+        console.log('Child clicked');
+        event.stopPropagation(); // Menghentikan bubbling (optional untuk jika ingin menghentikan notifikasi parent event)
+    });
+
+</script>

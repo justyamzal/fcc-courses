@@ -1,0 +1,71 @@
+<!-- Introduction -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+</head>
+
+<body>
+    <p>
+        1. Introduction (0:00:00)
+        Bagian ini memperkenalkan DOM (Document Object Model) sebagai inti dari interaksi antara HTML, CSS, dan
+        JavaScript. DOM adalah representasi berbasis objek dari dokumen HTML yang memungkinkan pengembang untuk
+        memanipulasi elemen, gaya, dan konten halaman web secara dinamis.
+    </p>
+    <p>
+
+        2. What is the DOM? (0:01:32)
+        DOM adalah struktur pohon (tree) yang mewakili semua elemen HTML dalam sebuah halaman web. Setiap elemen (tag
+        HTML) direpresentasikan sebagai node dalam DOM, dan Anda dapat mengakses atau memodifikasinya menggunakan
+        JavaScript.
+
+        Contoh:
+        <!-- 
+        
+        Contoh:
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>DOM Example</title>
+                </head>
+                <body>
+                    <h1 id="judul">Hello, World!</h1>
+                    <p class="deskripsi">Ini adalah paragraf deskripsi.</p>
+                </body>
+                </html>
+                
+                - <html> adalah root node.
+                - <head> dan <body> adalah child nodes dari <html>.
+                -  <h1> dan <p> adalah child nodes dari <body>
+                - <h1> dan <p>, <meta> dan <title> adalah sibling node
+
+        -->
+    </p>
+    <p>
+        3. DOM Tree Analogy (0:02:05)
+        DOM digambarkan sebagai pohon (tree) dengan hierarki:
+
+        Parent Node : Node yang memiliki child nodes.
+        Child Node : Node yang merupakan bagian dari parent node.
+        Sibling Node : Nodes yang memiliki parent yang sama.
+        Contoh Pohon DOM:
+    </p>
+    <!-- 
+        html
+        ├── head
+        │   └── meta
+        │   └── title
+        └── body
+            ├── h1
+            └── p
+    
+    -->
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing the DOM </title>
+</head>
+<body>
+    <!-- Anda dapat berpindah antar elemen dalam DOM menggunakan properti seperti parentNode, children, nextElementSibling, dll. -->
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+</html>
+<script>
+    
+    const list = document.getElementById('list');
+    //*--- Accessing child nodes
+    console.log(list.children);  // HTMLCollection [li, li, li]
+
+    //*--- Accessing first sibling element
+    const firstItem = list.firstElementChild;
+    console.log(firstItem.textContent);  // Output: li Item 1
+
+</script>

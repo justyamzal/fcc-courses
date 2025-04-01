@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pt4_creating-element</title>
+</head>
+<body>
+    <!-- 
+    Setelah membuat elemen baru, Anda dapat menambahkannya ke DOM menggunakan metode seperti appendChild() atau append().
+    -->
+
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    const container = document.getElementById('container');
+    console.log(container);
+
+    //* --- Creating new element ---
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'Ini adalah paragraf baru.';
+    console.log(newParagraph.textContent);
+
+    //* --- Adding element to DOM
+    let addText = container.appendChild(newParagraph);
+    console.log(addText);
+</script>

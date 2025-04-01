@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Element</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#0f2027,#203a43,#2c5364);
+  height: 100vh;
+  font-family: 'Lato',sans-serif;
+  border: solid 15px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+#movie li {
+  margin-bottom: 10px;
+  border: solid 2px #fff;
+  padding: 5px;
+  cursor: pointer;
+
+}
+
+.div2 {
+  border: solid 10px #fff;
+  border-radius: 20px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #fff;
+}
+.container {
+  border: solid 5px #fff;
+  border-radius: 20px;
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+
+#main-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-heading">Favourite Movie Franchise</h1>
+          <ul id="movie">
+              <li id="firstItem" class="list-items">The Matrix</li>
+              <li id="secondItem" class="list-items">Stars Wars</li>
+              <li id="thirdItem" class="list-items">Harry Potter</li>
+              <li id="fourthItem" class="list-items">Lord of The Rings</li>
+              <li id="fifthItem" class="list-items">Marvel</li>
+          </ul>
+      </div>
+    
+      <script>
+        //*--- DOM MANIPULATION ---//
+
+        //--- Parent Node Traversal
+              let ul = document.querySelector('ul');
+              // console.log(ul.parentNode.parentNode); //! 2 step up
+              // console.log(ul.parentElement.parentElement); //! 2 step up
+
+              const html = document.documentElement;
+              // console.log(html.parentNode);
+              // console.log(html.parentElement);
+
+        //--- Child Node Traversal
+              let ul_ = document.querySelector('ul');
+
+              // console.log(ul_.childNodes);
+              // console.log(ul_.firstChild);
+              // console.log(ul_.lastChild);
+
+              // ul_.firstChild.style.backgroundColor = 'blue';  //! error
+              // ul_.childNodes[1].style.backgroundColor = 'blue';
+
+
+        //--- Sibling Node Traversal
+              let _ul = document.querySelector('ul');
+              const div = document.querySelector('div');
+
+              // console.log(div.childNodes); 
+                  //! Anak lagsung dari element div/induk div, element li tidak terhitung karena merupakan cucu dari div / anak dari li (bukan anak langsung dari div)
+
+              // console.log(_ul.previousElementSibling); //! h1#main-heading
+              // console.log(_ul.nextElementSibling); //! null
+      </script>
+</body>
+</html>

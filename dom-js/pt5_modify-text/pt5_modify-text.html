@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pt5_modify-text</title>
+</head>
+<body>
+    <!-- 
+        Anda dapat memodifikasi teks elemen menggunakan properti textContent atau innerHTML.
+    -->
+        <h1 id="judul">Hello World!</h1>
+</body>
+</html>
+
+<script>
+    const judul = document.getElementById('judul');
+
+    //* --- Modifying the text --- //
+    const modText = judul.textContent = 'Halo Dunia!';
+    console.log(modText);
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pt6_modify-el-att-cls -  Modifying Elements Attributes & Classes  </title>
+</head>
+<body>
+    <!-- 
+    Anda dapat memodifikasi atribut elemen (misalnya href, src) dan kelas CSS.
+
+    Contoh: -->
+
+    <a id="link" href="https://www.example.com">Kunjungi Website</a>
+
+</body>
+</html>
+
+<script>
+    const link = document.getElementById('link');
+    
+
+    //*--- Changing href attribute ---//
+    link.setAttribute('href','https://www.google.com');
+    
+
+    //*--- Adding CSS Classes ---//
+    const highlight =  link.classList.add('highlight');
+    
+</script>

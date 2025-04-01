@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        padding: 20px;
+    }
+
+    .task-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .task-item {
+        background: #ffffff;
+        border: 1px solid #ddd;
+        margin: 5px 0;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .task-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+</style>
+
+<body>
+
+    <body>
+        <h1>Dynamic Task List</h1>
+        <ul id="taskList" class="task-list">
+            <li class="task-item">Task 1</li>
+            <li class="task-item">Task 2</li>
+            <li class="task-item">Task 3</li>
+        </ul>
+
+        <button id="addTaskButton">Add Task</button>
+        <script>
+            /*
+    Apa Itu Event Delegation?
+    Event delegation adalah teknik di mana Anda menangani event untuk banyak elemen dengan hanya menambahkan satu event listener pada elemen induknya. Teknik ini memanfaatkan event propagation (terutama fase bubbling) untuk mendeteksi interaksi pada elemen anak tanpa perlu menambahkan listener secara individual ke setiap elemen.
+
+    Kenapa Menggunakan Event Delegation?
+    1. Efisiensi : Jika ada banyak elemen (misalnya, item dalam daftar), menambahkan listener ke setiap elemen bisa menjadi tidak efisien dan membebani performa.
+    2. Skalabilitas : Ketika elemen dinamis ditambahkan atau dihapus dari DOM, Anda tidak perlu khawatir menambahkan atau menghapus listener secara manual.
+    3. Kemudahan Pemeliharaan : Hanya satu listener diperlukan, sehingga kode lebih bersih dan mudah dipahami.
+
+    Bagaimana Event Delegation Bekerja?
+    1. Event Propagation :
+        - Ketika sebuah elemen anak (misalnya, <li> dalam daftar) diklik, event akan "bubble up" ke elemen induknya (misalnya, <ul>).
+        - Elemen induk dapat "mendengarkan" event ini dan menentukan elemen mana yang memicunya menggunakan properti e.target.
+    2. Penggunaan e.target :
+        - Properti e.target mengacu pada elemen spesifik yang pertama kali memicu event (elemen target).
+        - Dengan memeriksa e.target, Anda dapat menentukan apakah elemen yang diklik adalah elemen yang Anda ingin tangani.
+    */
+
+            // ----- DOM Manipulation  -----//
+            /* Event Delegation */
+
+            // it allows users handling many element with just adding single event listener to parent element      
+        </script>
+
+        <script>
+            // Select the task list and button
+            const taskList = document.getElementById('taskList');
+            const addTaskButton = document.getElementById('addTaskButton');
+
+            // Function to add a new task dynamically
+            addTaskButton.addEventListener('click', function () {
+                const newTask = document.createElement('li');
+                newTask.className = 'task-item';
+                newTask.textContent = `Task ${taskList.children.length + 1}`;
+                taskList.appendChild(newTask);
+            });
+
+            // Event delegation using event propagation
+            taskList.addEventListener('click', function (e) {
+                // Check if the clicked element is a task item
+                if (e.target && e.target.classList.contains('task-item')) {
+                    // Toggle a 'completed' class to mark the task as done
+                    e.target.classList.toggle('completed');
+                }
+            });
+        </script>
+    </body>
+
+</html>

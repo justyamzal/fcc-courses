@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners | Hidden Content Box</title>
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .reveal-btn {
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .reveal-btn:hover {
+            transform: scale(1.05);
+        }
+        .hidden-content {
+            display: none;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 300px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Listeners</h1>
+    <div class="container">
+        <div class="reveal-btn" onclick="toggleContent()">
+            <p>Reveal More</p>
+        </div>
+        <div class="hidden-content" id="hiddenContent">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio hic facilis, repudiandae incidunt quisquam neque officiis quibusdam cum quam suscipit dolorem animi aliquid harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repellendus eius fuga, iusto dolores voluptatum natus veritatis placeat eaque velit. </p>
+        </div>
+    </div>
+    <script>
+        function toggleContent() {
+            const hiddenContent = document.getElementById("hiddenContent");
+            if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+                hiddenContent.style.display = "block";
+            } else {
+                hiddenContent.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

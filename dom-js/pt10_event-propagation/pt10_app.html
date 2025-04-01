@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d1117;
+            color: white;
+        }
+
+        .div2 {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div2 span {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+
+        .div1 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px solid white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div1 span {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        button {
+            background: transparent;
+            color: white;
+            padding: 20px;
+            border: 2px solid;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .click-button:hover {
+            background-color: #ffffff1a;
+            /* Semi-transparent white */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="div2">
+        <span>2</span>
+        <div class="div1">
+            <span>1</span>
+            <button class="click-button">Click</button>
+        </div>
+    </div>
+
+    <script>
+        // ----- DOM Manipulation : Event Probagation ----- //
+
+        /*--- Capture Phase ---*/
+
+            // window.addEventListener('click', function() {
+            //     console.log('Window');
+            // },true);
+
+            // document.addEventListener('click', function() {
+            //     console.log('Document');
+            // },true);
+
+            // document.querySelector('.div2').addEventListener(
+            //     'click',function() {
+            //     console.log('DIV 2');
+            // },true);
+
+            // document.querySelector('.div1').addEventListener(
+            //     'click',function() {
+            //     console.log('DIV 1');
+            // },true);
+
+            // document.querySelector('button').addEventListener(
+            //     'click',function(e) {
+            //     console.log(e.target.innerText = "clicked!");
+            // },true);
+
+        /*--- Buble Phase ---*/
+        
+            // window.addEventListener('click', function () {
+            //     console.log('Window (Bubble)');
+            // });
+
+            // document.addEventListener('click', function () {
+            //     console.log('Document (Bubble)');
+            // });
+
+            // document.querySelector('.div2').addEventListener(
+            //     'click',
+            //     function () {
+            //         console.log('DIV 2 (Bubble)');
+            //     });
+
+            // document.querySelector('.div1').addEventListener(
+            //     'click',
+            //     function () {
+            //         console.log('DIV 1 (Bubble)');
+            //     });
+
+            // document.querySelector('button').addEventListener(
+            //     'click',
+            //     function (e) {
+            //         console.log(e.target.innerText = "clicked!");
+            //     });
+            
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- 
+Event propagation adalah mekanisme bagaimana suatu event menyebar atau merambat melalui DOM (Document Object Model) ketika sebuah elemen menerima event. Proses ini terdiri dari tiga fase utama:
+
+1. Capture Phase : Event menyebar dari elemen window ke elemen target.
+2. Target Phase : Event mencapai elemen target yang memicu event tersebut.
+3. Bubble Phase : Event kembali menyebar dari elemen target ke atas menuju elemen window.
+Pada kode Anda, Anda telah menggunakan parameter true pada metode .addEventListener() untuk mengaktifkan capture phase . Mari kita analisis lebih detail:
+-->

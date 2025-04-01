@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .boxes {
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px 0 0;
+            width: 250px;
+            height: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .boxes:hover {
+            transform: scale(1.05);
+        }
+        button {
+            margin-top: 100px;
+            padding: 10px 40px;
+            border: none;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        /* button:hover { */
+            /* background: white; */
+            /* color: black; */
+        /* } */
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Event Listeners</h1>
+
+    <div class="container">
+        <div class="boxes box-1">
+            <h1 id="heading">Example 1</h1>
+            <button onclick="alert('I Love Javascript')" class="btn-1">Enter</button>
+        </div>
+        <div class="boxes box-2">
+            <h1 id="heading">Example 2</h1>
+            <button class="btn-2">Enter</button>
+        </div>
+        <div class="boxes box-3">
+            <h1 id="heading">Example 3</h1>
+            <button class="btn-3">Enter</button>
+        </div>
+    </div>
+    <script>
+
+        //*--- DOM MANIPULATION ---//
+
+        //--Event Listeners --
+
+            // element.addEventListener('click',function);
+            
+
+            const buttonTwo = document.querySelector('.btn-2');
+
+            function alertBtn() {
+                alert('I also love JavaScript');
+            }
+            buttonTwo.addEventListener("click",alertBtn);
+
+
+            // Mouseover
+            const newBackgroundColor = document.querySelector('.box-3'); 
+
+            function changeBgColor() {
+                newBackgroundColor.style.bfffackgroundColor = 'blue';
+            }
+
+            newBackgroundColor.addEventListener("mouseover",changeBgColor);
+
+    </script>
+</body>
+</html>

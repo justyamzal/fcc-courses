@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Element</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#0f2027,#203a43,#2c5364);
+  height: 100vh;
+  font-family: 'Lato',sans-serif;
+  border: solid 15px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+#movie li {
+  margin-bottom: 10px;
+  border: solid 2px #fff;
+  padding: 5px;
+  cursor: pointer;
+
+}
+
+.div2 {
+  border: solid 10px #fff;
+  border-radius: 20px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #fff;
+}
+.container {
+  border: solid 5px #fff;
+  border-radius: 20px;
+  font-size: 3.5rem;
+  text-align: center;
+  padding: 50px;
+  color: #fff;
+}
+
+#main-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-heading">Favourite Movie Franchise</h1>
+          <ul id="movie">
+              <li id="firstItem" class="list-items">
+                 <span>Neo </span> 
+                 The Matrix
+            </li>
+              <li id="secondItem" class="list-items">Stars Wars</li>
+              <li id="thirdItem" class="list-items">Harry Potter</li>
+              <li id="fourthItem" class="list-items">Lord of The Rings</li>
+              <li id="fifthItem" class="list-items">Marvel</li>
+          </ul>
+      </div>
+    
+      <script>
+        //*--- DOM MANIPULATION ---//
+
+        //-- Coloring 
+            const title = document.querySelector('#main-heading');
+            // title.style.color = 'red';
+        
+        //-- FontSize
+            const listItems = document.querySelectorAll('.list-items');
+             for (i = 0; i < listItems.length; i++) {
+                listItems[i].style.fontSize = '4rem';
+        }
+        // console.log(listItems);
+
+        //-- Creating Elements
+            const ul = document.querySelector('ul');
+            const li = document.createElement('li');
+        //-- Adding Elements
+            ul.append(li); //! itu just got added, you can check it at html style connsole
+
+        //-- Modifying Text
+            const firstListItem = document.querySelector('.list-items');
+            // console.log(firstListItem.innerText);
+            // console.log(firstListItem.textContent);
+            // console.log(firstListItem.innerHTML);
+
+            li.innerText = 'X-men';
+            li.setAttribute('id','main-heading');
+            // li.removeAttribute('id');
+
+      </script>
+</body>
+</html>
