@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Project 4 - Stop-Watch Pro</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: url(project-4.jpg) no-repeat center center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 60%;
+            height: 250px;
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 0 3px;
+        }
+
+        #timer {
+            width: 100%;
+            font-size: 72px;
+            text-align: center;
+            margin: 0px auto;
+            padding: 35px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        button {
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button i {
+            font-size: 2rem;
+            padding: 10px;
+            color: #fff;
+            width: 50px;
+        }
+
+        /* Button Colors  */
+
+        #play {
+            background-color: green;
+        }
+
+        #pause {
+            background-color: orange;
+        }
+
+        #reset {
+            background-color: red;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="timer">
+            00 : 00 : 00
+        </div>
+
+
+        <div class="buttons">
+            <!-- Start / Stop -->
+            <button id="startStopBtn">
+                <i class="fa-solid fa-play" id="play"></i>
+            </button>
+
+            <!-- Reset -->
+            <button id="resetBtn">
+                <i class="fa fa-solid fa-arrow-rotate-left" id="reset"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+        // Variables for buttons
+
+        const startStopBtn = document.querySelector('#startStopBtn');
+        const resetBtn = document.querySelector('#resetBtn');
+
+        // Variables for time Values
+
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+
+        // Variables for leading zero
+
+        let leadingSeconds = 0;
+        let leadingMinutes = 0;
+        let leadingHours = 0;
+
+        // Variables for set interval & timerstatus
+        let timerInterval = null; //! running for function (stopwatch) periodically / regularly
+        let timerStatus = "stopped"; //! variable for tracking stopwatchs status ('started' or 'stopped')
+
+
+
+        // StopWatch Function 
+        function stopWatch() {
+            seconds++;
+
+            //seconds to minute
+            if (seconds / 60 ===
+                1) { //when seconds reaching 60 it will get reset into 0 and will adding into 1 minutes also hours
+                seconds = 0; // seconds back to 0
+                minutes++; // minutes got added
+
+                if (minutes / 60 === 1) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            // Leading zero, zero from first digit timer. if the value of the second, minutes or hours is less than 10, the zero number will be on the front of the beginning value 
+            if (seconds < 10) {
+                leadingSeconds = "0" + seconds
+            .toString(); //toString() is methods for conversion to string, the reason is to concate at string form
+            } else {
+                leadingSeconds = seconds;
+            }
+            if (minutes < 10) {
+                leadingMinutes = "0" + minutes.toString();
+            } else {
+                leadingMinutes = minutes;
+            }
+            if (hours < 10) {
+                leadingHours = "0" + hours.toString();
+            } else {
+                leadingHours = hours;
+            }
+
+            //! show the leading zero at display
+            let displayTimer = document.getElementById('timer').innerText = leadingHours + ":" + leadingMinutes + ":" +
+                leadingSeconds;
+        }
+
+
+        // window.setInterval(stopWatch,1000);
+
+        // Start/Stop Eventlisteners
+        startStopBtn.addEventListener('click', function () {
+            if (timerStatus === "stopped") {
+                timerInterval = window.setInterval(stopWatch, 1000);
+                document.getElementById('startStopBtn').innerHTML =
+                    '<i class="fa-solid fa-pause" id="pause"></i>';
+                timerStatus = "started";
+
+            } else {
+                window.clearInterval(timerInterval); //if not stopped/ still running then turn into stopped
+                document.getElementById('startStopBtn').innerHTML =
+                    '<i class="fa-solid fa-play" id="play"></i>';
+                timerStatus = "stopped";
+            }
+        });
+
+        // Reset EventListeners
+        resetBtn.addEventListener('click', function () {
+            window.clearInterval(timerInterval);
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+
+            document.getElementById('timer').innerHTML = "00:00:00";
+        });
+    </script>
+</body>
+
+</html>
