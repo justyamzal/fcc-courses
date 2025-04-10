@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Project 5 : To-Do List (Master)</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: url(project-5.jpg) no-repeat center center / cover;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        #add-task-container {
+            display: flex;
+
+            width: 350px;
+            padding: 20px 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 3px;
+            margin-bottom: 20px;
+
+            
+        }
+
+        /* Input Field */
+        input {
+            flex: 5;
+            margin-right: 10px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            padding: 5px;
+        }
+
+        /* Add Task Button */
+        #add-task {
+            flex: 1;
+            transition: .3s;  /* for hover transition */
+            font-size: 1.2rem;
+            padding: 5px;
+
+            background: #fff;
+            color: green;
+            border: green solid 2px;
+            border-radius: 10px;
+        }
+
+        #add-task:hover {
+            background-color: green;
+            color: #fff;
+        }
+
+        /* (Task List Style) Styling for task which get added to-do list  */
+        .task {
+            width: 100%; /*for stretching till same with the task container*/
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 3px;
+
+            padding: 5px;
+            margin-bottom: 5px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .task li {
+            list-style: none;
+            flex: 4;
+            padding: 5px;
+            font-size: 1.3rem;
+            margin: 10px;
+        }
+
+        .task button {
+            flex: 1;
+            border-radius: 10px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        /* Done */
+        .task .checkTask {
+            color: orange;
+            margin-right: 5px;
+            border:  solid 2px orange;
+            font-size: 1.5rem;
+        }
+        
+        .task .checkTask:hover {
+            background-color: orange;
+            color: #fff;
+        } 
+        /* Delete */
+        .task .deleteTask {
+            color: red;
+            border: solid 2px red;
+            font-size: 1.3rem;
+        }
+
+        .task .deleteTask:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="add-task-container">
+            <input type="text" placeholder="Enter Task" id="input-task">
+            <button id="add-task"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div id="task-container">
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Variables
+        const inputTask = document.getElementById('input-task'); //! getting value text from input field
+        const addTask = document.getElementById('add-task'); //! adding new item to the list 
+        const taskContainer = document.getElementById('task-container'); //! as container to hold and saving task list temporary
+
+
+        // Event Listeners for Add Button 
+        addTask.addEventListener('click', function () {
+
+            let task = document.createElement('div'); //! create div element for task with 'task' as a classname 
+            task.classList.add('task'); //! mengakses dan memanipulasi kelas CSS, menambahkan class 'task' pada div
+
+            let li = document.createElement('li'); //! create li element for task list with name 'value' from the inputTask
+            li.innerText = `${inputTask.value}`;  //! InnerText = mengubah/memanipulasi text html secara visible
+            task.appendChild(li); //! menambahkan 'element' baru for child item 
+
+            //Button checklist
+            let checkButton = document.createElement('button'); //! tambahkan checkButton
+            checkButton.innerHTML = '<i class="fa-solid fa-check"></i>'; //! saat checkButton dibuat,tambahkan InnerHTML berupa icon check = mengubah/manipulasi element html
+            checkButton.classList.add('checkTask'); //! tambahkan class checktask
+            task.appendChild(checkButton); //! menambahkan attribute check untuk element child item from parent class
+
+            //Button delete
+            let deleteButton = document.createElement('button');
+            deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>'; //! tambahkan innerHTML berupa icon trash
+            deleteButton.classList.add('deleteTask'); //! menambahkan class deleTask pada button
+            task.appendChild(deleteButton); //! menambahkan attribute turunan delete pada element child dari parent, the appendChild class is suit to edit each item from the parent class
+
+
+            //Logic form validation
+            if (inputTask.value === '') {
+                alert('Please Enter a Task'); //! alert popped out
+            } else {
+                taskContainer.appendChild(task); //! then add the item list from input 
+            }
+
+            inputTask.value = ''; // Mengosongkan input field
+
+
+            //Action for checkButton
+            checkButton.addEventListener('click',function(){
+                checkButton.parentElement.style.textDecoration = "line-through"; //! list completed got linethrough
+            });
+
+            //Action for deleteButton
+            deleteButton.addEventListener('click',function(e){
+                deleteButton.parentElement.remove(); //! remove item from the list
+            });
+
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
